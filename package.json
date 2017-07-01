@@ -1,0 +1,60 @@
+{
+  "name": "ts-import-plugin",
+  "version": "1.0.0",
+  "description": "babel-plugin-import TypeScript version",
+  "main": "index.js",
+  "typings": "./lib/index.d.ts",
+  "files": [
+    "./index.js",
+    "lib/**"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc -p src/tsconfig.json",
+    "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha",
+    "lint": "tslint src & standard \"test/*.js\" \"./*.js\"",
+    "prepublish": "npm run build",
+    "start": "rm -rf dist && NODE_ENV=production webpack --optimize-minimize",
+    "test": "mocha",
+    "watch": "tsc -p ./src/tsconfig.json -w --diagnostics"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Brooooooklyn/ts-import-plugin.git"
+  },
+  "keywords": [
+    "antd",
+    "TypeScript",
+    "plugin"
+  ],
+  "author": "lynweklm@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/lodash": "^4.14.68",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.7",
+    "@types/react": "^15.0.33",
+    "@types/react-dom": "^15.5.1",
+    "antd": "^2.11.2",
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "lodash": "^4.17.4",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "standard": "^10.0.2",
+    "ts-loader": "^2.2.1",
+    "ts-node": "^3.1.0",
+    "tslint": "^5.4.3",
+    "tslint-eslint-rules": "^4.1.1",
+    "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "tslib": "^1.7.1",
+    "typescript": "^2.4.1"
+  },
+  "standard": {
+    "globals": [ "describe", "it" ]
+  }
+}
