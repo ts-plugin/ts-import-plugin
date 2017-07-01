@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/Brooooooklyn/ts-import-plugin.svg?style=svg)](https://circleci.com/gh/Brooooooklyn/ts-import-plugin)
+[![Coverage Status](https://coveralls.io/repos/github/Brooooooklyn/ts-import-plugin/badge.svg)](https://coveralls.io/github/Brooooooklyn/ts-import-plugin)
+
 # ts-import-plugin
 
 Modular import plugin for TypeScript, compatible with antd, antd-mobile and so on.
