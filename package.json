@@ -12,7 +12,7 @@
     "build": "rm -rf lib && tsc -p src/tsconfig.json",
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha",
     "lint": "tslint src & standard \"test/*.js\" \"./*.js\"",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "start": "rm -rf dist && NODE_ENV=production webpack --optimize-minimize",
     "test": "mocha",
     "watch": "tsc -p ./src/tsconfig.json -w --diagnostics"
