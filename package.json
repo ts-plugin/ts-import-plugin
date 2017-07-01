@@ -1,6 +1,6 @@
 {
   "name": "ts-import-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "babel-plugin-import TypeScript version",
   "main": "index.js",
   "typings": "./lib/index.d.ts",
@@ -55,6 +55,9 @@
     "typescript": "^2.4.1"
   },
   "standard": {
-    "globals": [ "describe", "it" ]
+    "globals": [
+      "describe",
+      "it"
+    ]
   }
 }
