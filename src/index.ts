@@ -16,12 +16,12 @@ export interface ImportedStruct {
 // camel2Dash camel2Underline
 // borrow from https://github.com/ant-design/babel-plugin-import
 function camel2Dash(_str: string) {
-  const str = _str[0].toLowerCase() + _str.substr(1);
+  const str = _str[0].toLowerCase() + _str.substr(1)
   return str.replace(/([A-Z])/g, ($1) => `-${$1.toLowerCase()}`)
 }
 
 function camel2Underline(_str: string) {
-  const str = _str[0].toLowerCase() + _str.substr(1);
+  const str = _str[0].toLowerCase() + _str.substr(1)
   return str.replace(/([A-Z])/g, ($1) => `_${$1.toLowerCase()}`)
 }
 
