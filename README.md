@@ -6,6 +6,10 @@
 
 Modular import plugin for TypeScript, compatible with antd, antd-mobile and so on.
 
+webpack template `./webpack.config.js`, run: `npm start` to see the bundle analyzer.
+
+![bundle-analyzer](./bundle.png)
+
 # Why use this
 
 transform such code:

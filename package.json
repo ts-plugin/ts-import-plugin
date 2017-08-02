@@ -13,7 +13,7 @@
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha",
     "lint": "tslint -c ./tslint.json ./src/**/*.ts & standard \"test/*.js\" \"./*.js\"",
     "prepare": "npm run build",
-    "start": "rm -rf dist && NODE_ENV=production webpack --optimize-minimize",
+    "start": "rm -rf dist && NODE_ENV=production webpack",
     "test": "mocha",
     "watch": "tsc -p ./src/tsconfig.json -w --diagnostics"
   },
@@ -38,17 +38,21 @@
     "antd": "^2.12.3",
     "chai": "^4.1.0",
     "coveralls": "^2.13.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
     "lodash": "^4.17.4",
     "mocha": "^3.5.0",
     "nyc": "^11.1.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "standard": "^10.0.2",
+    "style-loader": "^0.18.2",
     "ts-loader": "^2.3.2",
     "ts-node": "^3.3.0",
     "tslint": "^5.5.0",
     "tslint-eslint-rules": "^4.1.1",
-    "webpack": "^3.4.1"
+    "webpack": "^3.4.1",
+    "webpack-bundle-analyzer": "^2.8.3"
   },
   "dependencies": {
     "tslib": "^1.7.1",
