@@ -55,28 +55,7 @@ module.exports = {
 
 ## With awesome-typescript-loader
 
-```js
-// webpack.config.js
-const tsImportPluginFactory = require('ts-import-plugin')
-
-module.exports = {
-  // ...
-  module: {
-    rules: [
-      {
-        test: /\.(jsx|tsx|js|ts)$/,
-        loader: 'awesome-typescript-loader',
-        options: {
-          getCustomTransformers: () => ({
-            before: [ tsImportPluginFactory( /** options */) ]
-          })
-        }
-      }
-    ]
-  },
-  // ...
-}
-```
+Due to https://github.com/s-panferov/awesome-typescript-loader/issues/447, `awesome-typescript-loader` is not working with any `TypeScript plugin`, include this one.
 
 ## Options
 
