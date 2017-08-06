@@ -25,7 +25,7 @@ import { default as C } from 'antd/lib/card'
 import 'antd/lib/card/style/index.less'
 ```
 
-# Useage
+# Usage
 
 ## With ts-loader
 
