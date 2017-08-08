@@ -87,7 +87,7 @@ example:
 tsImportPluginFactory({
   libraryName: 'antd',
   libraryDirectory: 'lib',
-  style: 'true'
+  style: true
 })
 ```
 
