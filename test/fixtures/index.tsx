@@ -1,5 +1,6 @@
 import React from 'react'
 import { Alert, Affix as S, AutoComplete } from 'antd'
+import { Drawer } from 'material-ui'
 import { OtherComponent } from './other'
 import { forEach } from 'lodash'
 
