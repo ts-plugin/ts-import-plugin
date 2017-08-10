@@ -65,7 +65,7 @@ Due to https://github.com/s-panferov/awesome-typescript-loader/issues/447, `awes
 
 ## Options
 
-options is a object
+`options` can be an object:
 
 - libraryName `string`
 
@@ -99,4 +99,22 @@ tsImportPluginFactory({
   libraryDirectory: 'components',
   camel2DashComponentName: false
 }
+```
+
+`options` can be an array:
+
+example:
+
+```javascript
+[
+  {
+    libraryName: 'antd',
+    libraryDirectory: 'lib',
+    style: true
+  }, {
+    libraryName: 'material-ui',
+    libraryDirectory: 'components',
+    camel2DashComponentName: false
+  }
+]
 ```

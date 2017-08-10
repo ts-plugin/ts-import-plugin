@@ -109,10 +109,9 @@ const defaultOptions = {
   camel2DashComponentName: true
 }
 
-export function createTransformer(_options: Partial<Options> = { }) {
-  const options = { ...defaultOptions, ..._options }
-
-  const { libraryName } = options
+export function createTransformer(_options: Partial<Options> | Array<Partial<Options>> = { }) {
+  const mergeDefault = (options: Partial<Options>) => ({ ...defaultOptions, ...options })
+  const optionsArray: Options[] = Array.isArray(_options) ? _options.map(options => mergeDefault(options)) : [mergeDefault(_options)]
 
   const transformer: ts.TransformerFactory<ts.SourceFile> = (context) => {
     const visitor: ts.Visitor = (node) => {
@@ -127,7 +126,9 @@ export function createTransformer(_options: Partial<Options> = { }) {
 
       const importedLibName = getImportedLibName(node)
 
-      if (importedLibName !== `'${ libraryName }'`) {
+      const options = optionsArray.find(_ => `'${_.libraryName}'` === importedLibName)
+
+      if (!options) {
         return node
       }
 

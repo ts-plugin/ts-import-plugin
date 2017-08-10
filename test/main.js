@@ -164,3 +164,39 @@ describe('should compile with camel2UnderlineComponentName', () => {
     })
   })
 })
+
+describe('should compile with an array of options', () => {
+  const transformer = transformerFactory([
+    {
+      style: false,
+      libraryName: 'lodash',
+      libraryDirectory: null,
+      camel2DashComponentName: false
+    }, {
+      style: false,
+      libraryName: 'material-ui',
+      libraryDirectory: '',
+      camel2DashComponentName: false
+    }
+  ])
+
+  fixtureDir.forEach(v => {
+    it(`compile ${v}`, () => {
+      const sourceCode = fs.readFileSync(resolve(__dirname, 'fixtures', v), 'utf-8')
+
+      const source = ts.createSourceFile(v, sourceCode, ts.ScriptTarget.ES2016, true)
+
+      const result = ts.transform(source, [ transformer ])
+
+      const transformedSourceFile = result.transformed[0]
+
+      const resultCode = printer.printFile(transformedSourceFile)
+
+      const expectCode = fs.readFileSync(resolve(__dirname, 'expect', 'options-array', v), 'utf-8')
+
+      expect(resultCode).to.equal(expectCode)
+
+      result.dispose()
+    })
+  })
+})
