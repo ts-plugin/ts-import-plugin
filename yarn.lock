@@ -10,9 +10,9 @@
   version "4.14.71"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.71.tgz#0dc383f78981216ac76e2f2c3afd998e0450e4c1"
 
-"@types/material-ui@^0.17.21":
-  version "0.17.21"
-  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.17.21.tgz#86e73996021eec12bd8379a11aa3e013f371e589"
+"@types/material-ui@0.18.0":
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.18.0.tgz#f3abc5431df8faa4592233c6c5377f2843eb807f"
   dependencies:
     "@types/react" "*"
     "@types/react-addons-linked-state-mixin" "*"
