@@ -6,6 +6,7 @@ export interface Options {
   libraryDirectory?: string
   camel2DashComponentName?: boolean
   camel2UnderlineComponentName?: boolean
+  styleExt?: string
 }
 
 export interface ImportedStruct {
@@ -87,13 +88,13 @@ function createDistAst(struct: ImportedStruct, options: Options) {
   astNodes.push(scriptNode)
 
   if (options.style) {
-    const { style } = options
+    const { style, styleExt } = options
     const styleNode = ts.createImportDeclaration(
       undefined,
       undefined,
       undefined,
       ts.createLiteral(
-        `${libraryName}/lib/${importName}/style/${ style === 'css' ? 'css' : 'index' }.js`
+        `${libraryName}/lib/${importName}/style/${ style === 'css' ? (styleExt ? styleExt : 'css') : 'index' }.js`
       )
     )
 
