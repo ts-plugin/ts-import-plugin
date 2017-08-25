@@ -4,7 +4,7 @@ import "antd/lib/card/style/index.js";
 import { default as A } from "antd/lib/alert";
 import "antd/lib/alert/style/index.js";
 ;
-import { concat } from 'lodash';
+import { concat } from "lodash";
 export class OtherComponent extends React.PureComponent {
     render() {
         return (<Card>

@@ -31,7 +31,7 @@ function getImportedLibName (node: ts.Node): string | void {
   if (lastChild.kind === ts.SyntaxKind.SemicolonToken) {
     lastChild = node.getChildAt(childCount - 2)
   }
-  return lastChild.getText()
+  return lastChild.getText().replace(/"/g, '\'')
 }
 
 function getImportedStructs(node: ts.Node) {

@@ -2,7 +2,7 @@ import React from 'react';
 import Card from "antd/lib/card";
 import { default as A } from "antd/lib/alert";
 ;
-import { concat } from 'lodash';
+import { concat } from "lodash";
 export class OtherComponent extends React.PureComponent {
     render() {
         return (<Card>
