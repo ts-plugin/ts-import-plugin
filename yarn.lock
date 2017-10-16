@@ -35,9 +35,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@16.0.0":
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.0.tgz#7fac396cbd1cf44e112b957c8ef9c7ef401a90b3"
+"@types/react-dom@^16.0.0":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.1.tgz#de159d00dd70050000f462e8bcff0c08ef803dee"
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
@@ -4616,7 +4616,7 @@ strip-json-comments@^2.0.0, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@0.19.0:
+style-loader@^0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.19.0.tgz#7258e788f0fee6a42d710eaf7d6c2412a4c50759"
   dependencies:
@@ -4746,9 +4746,9 @@ tryit@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tryit/-/tryit-1.0.3.tgz#393be730a9446fd1ead6da59a014308f36c289cb"
 
-ts-loader@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.3.2.tgz#b71b9f0d0062c791a654d462140718f9f7817665"
+ts-loader@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-3.0.0.tgz#ace15836e4d901341825a4f0a78c9bd0e4b4ba67"
   dependencies:
     chalk "^2.0.1"
     enhanced-resolve "^3.0.0"
