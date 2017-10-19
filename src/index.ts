@@ -7,6 +7,7 @@ export interface Options {
   camel2DashComponentName?: boolean
   camel2UnderlineComponentName?: boolean
   styleExt?: string
+  transformToDefaultImport?: boolean
 }
 
 export interface ImportedStruct {
@@ -68,17 +69,23 @@ function createDistAst(struct: ImportedStruct, options: Options) {
     options.camel2DashComponentName ?
       camel2Dash(_importName) :
       _importName
+
   const scriptNode = ts.createImportDeclaration(
     undefined,
     undefined,
     ts.createImportClause(
-      !struct.variableName ? ts.createIdentifier(struct.importName) : undefined,
+      struct.variableName || !options.transformToDefaultImport ? undefined : ts.createIdentifier(struct.importName),
       struct.variableName ? ts.createNamedImports([
         ts.createImportSpecifier(
-          ts.createIdentifier('default'),
+          options.transformToDefaultImport ? ts.createIdentifier('default') : ts.createIdentifier(struct.importName),
           ts.createIdentifier(struct.variableName)
         )
-      ]) : undefined
+      ]) : options.transformToDefaultImport ? undefined : ts.createNamedImports([
+        ts.createImportSpecifier(
+          undefined,
+          ts.createIdentifier(struct.importName)
+        )
+      ])
     ),
     ts.createLiteral(
       `${libraryName}/${options.libraryDirectory ? options.libraryDirectory + '/' : '' }${importName}`
@@ -107,7 +114,8 @@ const defaultOptions = {
   libraryName: 'antd',
   libraryDirectory: 'lib',
   style: false,
-  camel2DashComponentName: true
+  camel2DashComponentName: true,
+  transformToDefaultImport: true
 }
 
 export function createTransformer(_options: Partial<Options> | Array<Partial<Options>> = { }) {
