@@ -10,6 +10,8 @@ Modular import plugin for TypeScript, compatible with antd, antd-mobile and so o
 
 webpack template `./webpack.config.js`, run: `npm start` to see the bundle analyzer.
 
+> This plugin is not work if your are using `import * as _ from 'lodash'` or `import _ from 'lodash'`
+
 ![bundle-analyzer](./bundle.png)
 
 # Why use this
@@ -117,4 +119,89 @@ example:
     camel2DashComponentName: false
   }
 ]
+```
+
+# Compatible libs:
+
+## [ant-design](https://github.com/ant-design/ant-design)
+
+```ts
+const transformerFactory = require('ts-import-plugin')
+// with less
+transformerFactory({ style: true })
+// with css
+transformerFactory({ style: 'css' })
+// without style
+transformerFactory()
+```
+
+## [lodash](https://github.com/lodash/lodash/)
+
+> notice you should manual `import 'lodash/core'` in your project if your are using `import { chain } from 'lodash'` .
+
+```ts
+transformerFactory({
+  style: false,
+  libraryName: 'lodash',
+  libraryDirectory: null,
+  camel2DashComponentName: false
+})
+```
+
+## [antd-mobile](https://github.com/ant-design/ant-design-mobile)
+
+```ts
+// with css.web
+transformerFactory({ libraryName: 'antd-mobile', style: 'css', styleExt: 'css.web' })
+```
+
+## [material-ui](https://github.com/callemall/material-ui)
+
+```ts
+import { FloatingActionButton } from 'material-ui'
+import { ContentRemove, NavigationRefresh, ContentAdd } from 'material-ui/svg-icons'
+```
+
+```ts
+transformerFactory({
+  libraryName: 'material-ui',
+  libraryDirectory: 'components',
+  camel2DashComponentName: false
+})
+
+// svg-icons
+transformerFactory({
+  libraryDirectory: importName => {
+    const stringVec = importName.split(/([A-Z][a-z]+|[0-9]*)/)
+      .filter(s => s.length)
+      .map(s => s.toLocaleLowerCase())
+
+    return stringVec
+      .reduce((acc, cur, index) => {
+        if (index > 1) {
+          return acc + '-' + cur
+        } else if (index === 1) {
+          return acc + '/' + cur
+        }
+        return acc + cur
+      }, '')
+  },
+  libraryName: 'material-ui/svg-icons',
+  style: false,
+  camel2DashComponentName: false
+})
+```
+
+## [RxJS](https://github.com/reactivex/rxjs)
+
+> only compatible for 5.5+
+
+```ts
+transformerFactory({
+  libraryDirectory: '../_esm2015/operators',
+  libraryName: 'rxjs/operators',
+  style: false,
+  camel2DashComponentName: false,
+  transformToDefaultImport: false
+})
 ```
