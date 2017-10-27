@@ -1,9 +1,10 @@
 import * as ts from 'typescript'
+import { join } from 'path'
 
 export interface Options {
   libraryName?: string
   style?: boolean | 'css'
-  libraryDirectory?: string
+  libraryDirectory?: ((name: string) => string) | string
   camel2DashComponentName?: boolean
   camel2UnderlineComponentName?: boolean
   styleExt?: string
@@ -70,6 +71,19 @@ function createDistAst(struct: ImportedStruct, options: Options) {
       camel2Dash(_importName) :
       _importName
 
+  const libraryDirectory = typeof options.libraryDirectory === 'function' ?
+    options.libraryDirectory(_importName) :
+    join((options.libraryDirectory || ''), importName)
+
+  /* istanbul ignore next  */
+  if (process.env.NODE_ENV !== 'production') {
+    if (libraryDirectory == null) {
+      console.warn(`custom libraryDirectory resolve a ${ libraryDirectory } path`)
+    }
+  }
+
+  const importPath = join(libraryName!, libraryDirectory)
+
   const scriptNode = ts.createImportDeclaration(
     undefined,
     undefined,
@@ -87,9 +101,7 @@ function createDistAst(struct: ImportedStruct, options: Options) {
         )
       ])
     ),
-    ts.createLiteral(
-      `${libraryName}/${options.libraryDirectory ? options.libraryDirectory + '/' : '' }${importName}`
-    )
+    ts.createLiteral(importPath)
   )
 
   astNodes.push(scriptNode)

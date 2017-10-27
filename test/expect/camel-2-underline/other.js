@@ -3,6 +3,7 @@ import Card from "antd/lib/card";
 import { default as A } from "antd/lib/alert";
 ;
 import { concat } from "lodash";
+import { NavigationArrowBack, ContentAddBox, DeviceAccessAlarm, DeviceBattery20 } from 'material-ui/svg-icons';
 export class OtherComponent extends React.PureComponent {
     render() {
         return (<Card>

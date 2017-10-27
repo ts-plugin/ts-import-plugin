@@ -191,7 +191,7 @@ describe('should compile with camel2UnderlineComponentName', () => {
 
 describe('should compile with transformToDefaultImport', () => {
   const transformer = transformerFactory({
-    libraryDirectory: '',
+    libraryDirectory: '../_esm2015/operators',
     libraryName: 'rxjs/operators',
     style: false,
     camel2DashComponentName: false,
@@ -210,6 +210,49 @@ describe('should compile with transformToDefaultImport', () => {
 
       const resultCode = printer.printFile(transformedSourceFile)
       const expectCode = fs.readFileSync(resolve(__dirname, 'expect', 'transform-to-default-import', v), 'utf-8')
+
+      expect(resultCode).to.equal(expectCode)
+
+      result.dispose()
+    })
+  })
+})
+
+describe('should compile with custom libraryDirectory resolver', () => {
+
+  const transformer = transformerFactory({
+    libraryDirectory: importName => {
+      const stringVec = importName.split(/([A-Z][a-z]+|[0-9]*)/)
+        .filter(s => s.length)
+        .map(s => s.toLocaleLowerCase())
+
+      return stringVec
+        .reduce((acc, cur, index) => {
+          if (index > 1) {
+            return acc + '-' + cur
+          } else if (index === 1) {
+            return acc + '/' + cur
+          }
+          return acc + cur
+        }, '')
+    },
+    libraryName: 'material-ui/svg-icons',
+    style: false,
+    camel2DashComponentName: false
+  })
+
+  fixtureDir.forEach(v => {
+    it(`compile ${v}`, () => {
+      const sourceCode = fs.readFileSync(resolve(__dirname, 'fixtures', v), 'utf-8')
+
+      const source = ts.createSourceFile(v, sourceCode, ts.ScriptTarget.ES2016, true)
+
+      const result = ts.transform(source, [ transformer ])
+
+      const transformedSourceFile = result.transformed[0]
+
+      const resultCode = printer.printFile(transformedSourceFile)
+      const expectCode = fs.readFileSync(resolve(__dirname, 'expect', 'custom-library-resolver', v), 'utf-8')
 
       expect(resultCode).to.equal(expectCode)
 
