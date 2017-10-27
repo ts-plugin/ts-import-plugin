@@ -4,11 +4,6 @@
   "description": "babel-plugin-import TypeScript version",
   "main": "index.js",
   "typings": "index.d.ts",
-  "files": [
-    "./index.js",
-    "./index.d.ts",
-    "lib/**"
-  ],
   "scripts": {
     "build": "rm -rf lib && tsc -p src/tsconfig.json",
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha && nyc report",
