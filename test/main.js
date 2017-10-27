@@ -219,7 +219,6 @@ describe('should compile with transformToDefaultImport', () => {
 })
 
 describe('should compile with custom libraryDirectory resolver', () => {
-
   const transformer = transformerFactory({
     libraryDirectory: importName => {
       const stringVec = importName.split(/([A-Z][a-z]+|[0-9]*)/)
