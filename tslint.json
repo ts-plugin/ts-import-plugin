@@ -5,7 +5,7 @@
     "eofline": true,
     "align": [true, "parameters"],
     "class-name": true,
-    "indent": [true, 2],
+    "indent": [true, "spaces", 2],
     "max-line-length": [true, 150],
     "no-consecutive-blank-lines": [true],
     "no-trailing-whitespace": true,
