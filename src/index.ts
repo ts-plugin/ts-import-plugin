@@ -43,6 +43,9 @@ function getImportedStructs(node: ts.Node) {
     if (importChild.kind === ts.SyntaxKind.ImportClause) {
       importChild.getChildAt(0).forEachChild(child => {
         const childCount = child.getChildCount()
+        if (!childCount) {
+          return
+        }
         if (childCount !== 1) {
           const importName = child.getChildAt(0).getText()
           const variableName = child.getChildAt(2).getText()

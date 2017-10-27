@@ -57,7 +57,7 @@ describe('should compile with css', () => {
   })
 })
 
-describe('should compile with css', () => {
+describe('should compile with css.web', () => {
   const transformer = transformerFactory({ style: 'css', styleExt: 'css.web' })
 
   fixtureDir.forEach(v => {
