@@ -22,6 +22,10 @@
     "TypeScript",
     "plugin"
   ],
+  "files": [
+    "index.d.ts",
+    "lib/"
+  ],
   "author": "lynweklm@gmail.com",
   "license": "MIT",
   "devDependencies": {
