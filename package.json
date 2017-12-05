@@ -54,12 +54,12 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
     "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.6.2",
     "webpack": "^3.8.1",
     "webpack-bundle-analyzer": "^2.8.3"
   },
   "dependencies": {
-    "tslib": "^1.7.1",
-    "typescript": "^2.4.2"
+    "tslib": "^1.7.1"
   },
   "standard": {
     "globals": [
