@@ -116,7 +116,7 @@ function createDistAst(struct: ImportedStruct, options: Options) {
       undefined,
       undefined,
       ts.createLiteral(
-        `${libraryName}/lib/${importName}/style/${ style === 'css' ? (styleExt ? styleExt : 'css') : 'index' }.js`
+        `${ importPath }/style/${ style === 'css' ? (styleExt ? styleExt : 'css') : 'index' }.js`
       )
     )
 
