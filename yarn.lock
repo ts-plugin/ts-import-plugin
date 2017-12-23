@@ -2,38 +2,20 @@
 # yarn lockfile v1
 
 
-"@types/arrify@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@types/arrify/-/arrify-1.0.2.tgz#4a6856b9bfd4713c781df95349c6b15db60d4de1"
-
 "@types/chai@^4.0.2":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.4.tgz#fe86315d9a66827feeb16f73bc954688ec950e18"
-
-"@types/diff@^3.2.1":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@types/diff/-/diff-3.2.2.tgz#4d6f45537322a7a420d353a0939513c7e96d14a6"
 
 "@types/lodash@^4.14.71":
   version "4.14.80"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.80.tgz#a6b8b7900e6a7dcbc2e90d9b6dfbe3f6a7f69951"
 
-"@types/material-ui@^0.18.0":
-  version "0.18.3"
-  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.18.3.tgz#3a2a9fc81e57799419d8a58137800cd803d64a76"
+"@types/material-ui@0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.20.0.tgz#82cc10f79d64607756990c4637922cc0bc59164c"
   dependencies:
     "@types/react" "*"
     "@types/react-addons-linked-state-mixin" "*"
-
-"@types/minimist@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
-
-"@types/mkdirp@^0.5.0":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-0.5.2.tgz#503aacfe5cc2703d5484326b1b27efa67a339c1f"
-  dependencies:
-    "@types/node" "*"
 
 "@types/mocha@^2.2.41":
   version "2.2.44"
@@ -42,10 +24,6 @@
 "@types/node@*", "@types/node@^8.0.19":
   version "8.0.47"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.47.tgz#968e596f91acd59069054558a00708c445ca30c2"
-
-"@types/node@^8.0.27":
-  version "8.0.57"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.57.tgz#e5d8b4dc112763e35cfc51988f4f38da3c486d99"
 
 "@types/react-addons-linked-state-mixin@*":
   version "0.14.18"
@@ -64,12 +42,6 @@
   version "16.0.18"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.18.tgz#c08eea79ada55bf10b5353e18c21797dd17afa23"
 
-"@types/source-map-support@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@types/source-map-support/-/source-map-support-0.4.0.tgz#a62a1866614af68c888173c001481f242aaf148b"
-  dependencies:
-    "@types/node" "*"
-
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/strip-bom/-/strip-bom-3.0.0.tgz#14a8ec3956c2e81edb7520790aecf21c290aebd2"
@@ -77,14 +49,6 @@
 "@types/strip-json-comments@0.0.30":
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
-
-"@types/v8flags@github:types/npm-v8flags#de224ae1cd5fd7dbb4e7158a6cc7a29e5315930d":
-  version "2.0.0"
-  resolved "https://codeload.github.com/types/npm-v8flags/tar.gz/de224ae1cd5fd7dbb4e7158a6cc7a29e5315930d"
-
-"@types/yn@github:types/npm-yn#ca75f6c82940fae6a06fb41d2d37a6aa9b4ea8e9":
-  version "2.0.0"
-  resolved "https://codeload.github.com/types/npm-yn/tar.gz/ca75f6c82940fae6a06fb41d2d37a6aa9b4ea8e9"
 
 abbrev@1:
   version "1.1.1"
@@ -4877,18 +4841,10 @@ ts-loader@^3.1.0:
     loader-utils "^1.0.2"
     semver "^5.0.1"
 
-ts-node@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-4.0.0.tgz#75f3f8cffbbc00c2d793c2d1686173f78fcbcd8f"
+ts-node@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-4.0.2.tgz#cb3d039b9898fdc79ad09ab7e69c84564c8c41ee"
   dependencies:
-    "@types/arrify" "^1.0.1"
-    "@types/diff" "^3.2.1"
-    "@types/minimist" "^1.2.0"
-    "@types/mkdirp" "^0.5.0"
-    "@types/node" "^8.0.27"
-    "@types/source-map-support" "^0.4.0"
-    "@types/v8flags" types/npm-v8flags#de224ae1cd5fd7dbb4e7158a6cc7a29e5315930d
-    "@types/yn" types/npm-yn#ca75f6c82940fae6a06fb41d2d37a6aa9b4ea8e9
     arrify "^1.0.0"
     chalk "^2.3.0"
     diff "^3.1.0"
