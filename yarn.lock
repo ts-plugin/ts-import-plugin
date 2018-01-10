@@ -10,9 +10,9 @@
   version "4.14.80"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.80.tgz#a6b8b7900e6a7dcbc2e90d9b6dfbe3f6a7f69951"
 
-"@types/material-ui@0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.20.0.tgz#82cc10f79d64607756990c4637922cc0bc59164c"
+"@types/material-ui@^0.20.0":
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.20.1.tgz#c4ea0c5ad07d89732959383a3706d477018093f0"
   dependencies:
     "@types/react" "*"
     "@types/react-addons-linked-state-mixin" "*"
@@ -21,9 +21,13 @@
   version "2.2.44"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.44.tgz#1d4a798e53f35212fd5ad4d04050620171cd5b5e"
 
-"@types/node@*", "@types/node@^8.0.19":
+"@types/node@*":
   version "8.0.47"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.47.tgz#968e596f91acd59069054558a00708c445ca30c2"
+
+"@types/node@9.3.0":
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.3.0.tgz#3a129cda7c4e5df2409702626892cb4b96546dd5"
 
 "@types/react-addons-linked-state-mixin@*":
   version "0.14.18"
