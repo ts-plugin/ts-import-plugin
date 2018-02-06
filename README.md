@@ -98,7 +98,7 @@ tsImportPluginFactory({
 ```js
 {
   libraryName: 'material-ui',
-  libraryDirectory: 'components',
+  libraryDirectory: '',
   camel2DashComponentName: false
 }
 ```
@@ -115,7 +115,7 @@ example:
     style: true
   }, {
     libraryName: 'material-ui',
-    libraryDirectory: 'components',
+    libraryDirectory: '',
     camel2DashComponentName: false
   }
 ]
@@ -165,7 +165,7 @@ import { ContentRemove, NavigationRefresh, ContentAdd } from 'material-ui/svg-ic
 ```ts
 transformerFactory({
   libraryName: 'material-ui',
-  libraryDirectory: 'components',
+  libraryDirectory: '',
   camel2DashComponentName: false
 })
 
