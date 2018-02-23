@@ -2,9 +2,9 @@ const { resolve } = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const antdImportPluginFactory = require('./index')
+const tsImportPluginFactory = require('./index')
 
-const antdImportPlugin = antdImportPluginFactory({ style: 'css' })
+const tsImportPlugin = tsImportPluginFactory({ style: 'css' })
 
 const Extralib = new ExtractTextPlugin({
   filename: 'lib.css'
@@ -29,7 +29,7 @@ module.exports = {
         options: {
           transpileOnly: true,
           getCustomTransformers: () => ({
-            before: [ antdImportPlugin ]
+            before: [ tsImportPlugin ]
           }),
           compilerOptions: {
             module: 'es2015'

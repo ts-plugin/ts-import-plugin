@@ -10,6 +10,7 @@
     "jsx": "react",
     "outDir": "lib",
     "sourceMap": true,
+    "skipLibCheck": true,
     "typeRoots": [
       "node_modules/@types"
     ],
