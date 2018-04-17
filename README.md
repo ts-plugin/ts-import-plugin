@@ -32,6 +32,14 @@ import 'antd/lib/card/style/index.less'
 # Usage
 
 ## With ts-loader
+```js
+//tsconfig.json
+{
+  ...
+  "module": "ESNext",
+  ...
+}
+```
 
 ```js
 // webpack.config.js
@@ -62,6 +70,15 @@ module.exports = {
 ```
 
 ## With awesome-typescript-loader ( >= 3.5.0 )
+```js
+//tsconfig.json
+{
+  ...
+  "module": "ESNext",
+  ...
+}
+```
+
 ```js
 // webpack.config.js
 const tsImportPluginFactory = require('ts-import-plugin')
