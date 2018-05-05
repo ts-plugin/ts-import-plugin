@@ -191,6 +191,9 @@ transformerFactory({
 ```ts
 // with css.web
 transformerFactory({ libraryName: 'antd-mobile', style: 'css', styleExt: 'css.web' })
+
+// antd-mobile recently changed styleExt. If error occurs with prev, try next.
+transformerFactory({ libraryName: 'antd-mobile', style: 'css' })
 ```
 
 ## [material-ui](https://github.com/callemall/material-ui)
