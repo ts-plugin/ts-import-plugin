@@ -28,15 +28,6 @@ function camel2Underline(_str: string) {
   return str.replace(/([A-Z])/g, ($1) => `_${$1.toLowerCase()}`)
 }
 
-function getImportedLibName (node: ts.Node): string | void {
-  const childCount = node.getChildCount()
-  let lastChild = node.getChildAt(childCount - 1)
-  if (lastChild.kind === ts.SyntaxKind.SemicolonToken) {
-    lastChild = node.getChildAt(childCount - 2)
-  }
-  return lastChild.getText().replace(/"/g, '\'')
-}
-
 function getImportedStructs(node: ts.Node) {
   const structs = new Set<ImportedStruct>()
   node.forEachChild(importChild => {
@@ -140,17 +131,17 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
   const transformer: ts.TransformerFactory<ts.SourceFile> = (context) => {
     const visitor: ts.Visitor = (node) => {
 
-      if (node.kind === ts.SyntaxKind.SourceFile) {
+      if (ts.isSourceFile(node)) {
         return ts.visitEachChild(node, visitor, context)
       }
 
-      if (node.kind !== ts.SyntaxKind.ImportDeclaration) {
+      if (!ts.isImportDeclaration(node)) {
         return node
       }
 
-      const importedLibName = getImportedLibName(node)
+      const importedLibName = (<ts.StringLiteral>node.moduleSpecifier).text
 
-      const options = optionsArray.find(_ => `'${_.libraryName}'` === importedLibName)
+      const options = optionsArray.find(_ => _.libraryName === importedLibName)
 
       if (!options) {
         return node
