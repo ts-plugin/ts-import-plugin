@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/ts-import-plugin
   docker:
-    - image: circleci/node:6
+    - image: circleci/node:8
 
 version: 2
 jobs:
