@@ -31,25 +31,40 @@ function camel2Underline(_str: string) {
 function getImportedStructs(node: ts.Node) {
   const structs = new Set<ImportedStruct>()
   node.forEachChild(importChild => {
-    if (importChild.kind === ts.SyntaxKind.ImportClause) {
-      importChild.getChildAt(0).forEachChild(child => {
-        const childCount = child.getChildCount()
-        if (!childCount) {
-          return
-        }
-        if (childCount !== 1) {
-          const importName = child.getChildAt(0).getText()
-          const variableName = child.getChildAt(2).getText()
-          structs.add({
-            importName,
-            variableName
-          })
-        } else {
-          const name = child.getText()
-          structs.add({ importName: name })
-        }
-      })
+    if (!ts.isImportClause(importChild)) {
+      return
     }
+
+    // not allow default import, or mixed default and named import
+    // e.g. import foo from 'bar'
+    // e.g. import foo, { bar as baz } from 'x'
+    // and must namedBindings exist
+    if (importChild.name || !importChild.namedBindings) {
+      return
+    }
+
+    // not allow namespace import
+    // e.g. import * as _ from 'lodash'
+    if (!ts.isNamedImports(importChild.namedBindings)) {
+      return
+    }
+
+    importChild.namedBindings.forEachChild((namedBinding) => {
+      // ts.NamedImports.elements will always be ts.ImportSpecifier
+      const importSpecifier = <ts.ImportSpecifier>namedBinding
+
+      // import { foo } from 'bar'
+      if (!importSpecifier.propertyName) {
+        structs.add({ importName: importSpecifier.name.text })
+        return
+      }
+
+      // import { foo as bar } from 'baz'
+      structs.add({
+        importName: importSpecifier.propertyName.text,
+        variableName: importSpecifier.name.text
+      })
+    })
   })
   return structs
 }
