@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert, Affix as S, AutoComplete } from 'antd';
 import Drawer from "material-ui/Drawer";
+import { MenuItemProps } from "material-ui";
 import { OtherComponent } from './other';
 import forEach from "lodash/forEach";
 import { skip, take, switchMap as SwitchMap } from 'rxjs/operators';

@@ -92,41 +92,56 @@ function createDistAst(struct: ImportedStruct, options: Options) {
   }
 
   const importPath = join(libraryName!, libraryDirectory)
-
-  const scriptNode = ts.createImportDeclaration(
-    undefined,
-    undefined,
-    ts.createImportClause(
-      struct.variableName || !options.transformToDefaultImport ? undefined : ts.createIdentifier(struct.importName),
-      struct.variableName ? ts.createNamedImports([
-        ts.createImportSpecifier(
-          options.transformToDefaultImport ? ts.createIdentifier('default') : ts.createIdentifier(struct.importName),
-          ts.createIdentifier(struct.variableName)
-        )
-      ]) : options.transformToDefaultImport ? undefined : ts.createNamedImports([
-        ts.createImportSpecifier(
-          undefined,
-          ts.createIdentifier(struct.importName)
-        )
-      ])
-    ),
-    ts.createLiteral(importPath)
-  )
-
-  astNodes.push(scriptNode)
-
-  if (options.style) {
-    const { style, styleExt } = options
-    const styleNode = ts.createImportDeclaration(
+  try {
+    require.resolve(importPath)
+    const scriptNode = ts.createImportDeclaration(
       undefined,
       undefined,
-      undefined,
-      ts.createLiteral(
-        `${ importPath }/style/${ style === 'css' ? (styleExt ? styleExt : 'css') : 'index' }.js`
-      )
+      ts.createImportClause(
+        struct.variableName || !options.transformToDefaultImport ? undefined : ts.createIdentifier(struct.importName),
+        struct.variableName ? ts.createNamedImports([
+          ts.createImportSpecifier(
+            options.transformToDefaultImport ? ts.createIdentifier('default') : ts.createIdentifier(struct.importName),
+            ts.createIdentifier(struct.variableName)
+          )
+        ]) : options.transformToDefaultImport ? undefined : ts.createNamedImports([
+          ts.createImportSpecifier(
+            undefined,
+            ts.createIdentifier(struct.importName)
+          )
+        ])
+      ),
+      ts.createLiteral(importPath)
     )
 
-    astNodes.push(styleNode)
+    astNodes.push(scriptNode)
+
+    if (options.style) {
+      const { style, styleExt } = options
+      const styleNode = ts.createImportDeclaration(
+        undefined,
+        undefined,
+        undefined,
+        ts.createLiteral(
+          `${ importPath }/style/${ style === 'css' ? (styleExt ? styleExt : 'css') : 'index' }.js`
+        )
+      )
+
+      astNodes.push(styleNode)
+    }
+  // tslint:disable-next-line:no-empty
+  } catch (e) {
+    astNodes.push(ts.createImportDeclaration(
+      undefined,
+      undefined,
+      ts.createImportClause(
+        undefined,
+        ts.createNamedImports([
+          ts.createImportSpecifier(undefined, ts.createIdentifier(_importName))
+        ])
+      ),
+      ts.createLiteral(libraryName!)
+    ))
   }
   return astNodes
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Affix as S, AutoComplete } from 'antd';
-import { Drawer } from 'material-ui';
+import { Drawer, MenuItemProps } from 'material-ui';
 import { OtherComponent } from './other';
 import { forEach } from 'lodash';
 import { skip } from "rxjs/_esm2015/operators/skip";
