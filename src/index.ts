@@ -1,5 +1,5 @@
 import * as ts from 'typescript'
-import { join } from 'path'
+import { join as pathJoin, sep } from 'path'
 
 export interface Options {
   libraryName?: string
@@ -14,6 +14,14 @@ export interface Options {
 export interface ImportedStruct {
   importName: string
   variableName?: string
+}
+
+function join(...params: string[]) {
+  if (sep === '\\') {
+    const ret = pathJoin(...params)
+    return ret.replace(/\\/g, '/')
+  }
+  return pathJoin(...params)
 }
 
 // camel2Dash camel2Underline
@@ -93,7 +101,7 @@ function createDistAst(struct: ImportedStruct, options: Options) {
 
   const importPath = join(libraryName!, libraryDirectory)
   try {
-    require.resolve(join(process.cwd(), 'node_modules', importPath))
+    require.resolve(pathJoin(process.cwd(), 'node_modules', importPath))
     const scriptNode = ts.createImportDeclaration(
       undefined,
       undefined,
