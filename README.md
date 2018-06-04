@@ -110,10 +110,10 @@ module.exports = {
 - libraryName `string`
 
   default `'antd'`
-- style `boolean | 'css'`
+- style `boolean | string | ((path: string) => string)`
 
   default `false`
-- libraryDirectory `string`
+- libraryDirectory `string | ((name: string) => string)` 
 
   default `'lib'`
 - camel2DashComponentName `boolean`
