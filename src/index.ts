@@ -1,19 +1,28 @@
 import * as ts from 'typescript'
-import { join } from 'path'
+import { join as pathJoin, sep } from 'path'
 
 export interface Options {
   libraryName?: string
-  style?: boolean | 'css'
+  style?: boolean | 'css' | string | ((name: string) => string)
   libraryDirectory?: ((name: string) => string) | string
   camel2DashComponentName?: boolean
   camel2UnderlineComponentName?: boolean
-  styleExt?: string
   transformToDefaultImport?: boolean
 }
 
 export interface ImportedStruct {
   importName: string
   variableName?: string
+}
+
+function join(...params: string[]) {
+  /* istanbul ignore if  */
+  if (sep === '\\') {
+    const ret = pathJoin(...params)
+    return ret.replace(/\\/g, '/')
+  }
+  /* istanbul ignore next  */
+  return pathJoin(...params)
 }
 
 // camel2Dash camel2Underline
@@ -93,7 +102,7 @@ function createDistAst(struct: ImportedStruct, options: Options) {
 
   const importPath = join(libraryName!, libraryDirectory)
   try {
-    require.resolve(join(process.cwd(), 'node_modules', importPath))
+    require.resolve(pathJoin(process.cwd(), 'node_modules', importPath))
     const scriptNode = ts.createImportDeclaration(
       undefined,
       undefined,
@@ -117,14 +126,16 @@ function createDistAst(struct: ImportedStruct, options: Options) {
     astNodes.push(scriptNode)
 
     if (options.style) {
-      const { style, styleExt } = options
+      const { style } = options
+      const stylePath = (typeof style === 'function')
+        ? style(importPath)
+        : `${ importPath }/style/${ style === true ? 'index' : style }.js`
+
       const styleNode = ts.createImportDeclaration(
         undefined,
         undefined,
         undefined,
-        ts.createLiteral(
-          `${ importPath }/style/${ style === 'css' ? (styleExt ? styleExt : 'css') : 'index' }.js`
-        )
+        ts.createLiteral(stylePath)
       )
 
       astNodes.push(styleNode)

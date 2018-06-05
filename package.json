@@ -72,7 +72,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "tslint -c tslint.json -p tsconfig.json --fix",
+      "tslint -c tslint.json -p tsconfig.json --fix -e \"**/test/expect/**\"",
       "git add"
     ]
   }
