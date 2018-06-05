@@ -1,25 +1,19 @@
 const { resolve } = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const tsImportPluginFactory = require('./index')
 
-const tsImportPlugin = tsImportPluginFactory({ style: 'css' })
-
-const Extralib = new ExtractTextPlugin({
-  filename: 'lib.css'
-})
+const tsImportPlugin = tsImportPluginFactory({ style: 'css', libraryDirectory: 'es' })
 
 module.exports = {
-  entry: {
-    app: './test/fixtures/index.tsx'
-  },
+  entry: './test/fixtures/index.tsx',
   output: {
-    filename: '[name].js',
-    path: resolve(process.cwd(), 'dist')
+    filename: '[name].[hash].js',
+    path: resolve(process.cwd(), 'dist'),
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -29,52 +23,45 @@ module.exports = {
         options: {
           transpileOnly: true,
           getCustomTransformers: () => ({
-            before: [ tsImportPlugin ]
+            before: [tsImportPlugin],
           }),
           compilerOptions: {
-            module: 'es2015'
-          }
+            module: 'esnext',
+          },
         },
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        loader: Extralib.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader?minimize'
-          ]
-        })
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader?minimize'],
+      },
+    ],
+  },
+
+  mode: 'production',
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
 
-    Extralib,
+    new webpack.optimize.ModuleConcatenationPlugin(),
+
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+    }),
 
     new webpack.HashedModuleIdsPlugin(),
 
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: {
-        screw_ie8: true
-      },
-      compress: {
-        screw_ie8: true,
-        dead_code: true,
-        warnings: false
-      },
-      beautify: false,
-      sourceMap: false,
-      comments: false
-    }),
-
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
-      reportFilename: './report.html'
-    })
-  ]
+      reportFilename: './report.html',
+    }),
+  ],
 }

@@ -30,39 +30,41 @@
   "author": "lynweklm@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "@types/chai": "^4.1.2",
-    "@types/lodash": "^4.14.104",
+    "@types/chai": "^4.1.3",
+    "@types/lodash": "^4.14.109",
     "@types/material-ui": "^0.21.1",
-    "@types/mocha": "^5.0.0",
-    "@types/node": "^10.0.3",
-    "@types/react": "^16.0.40",
-    "@types/react-dom": "^16.0.4",
-    "antd": "^3.2.3",
+    "@types/mocha": "^5.2.1",
+    "@types/node": "^10.3.1",
+    "@types/react": "^16.3.16",
+    "@types/react-dom": "^16.0.6",
+    "antd": "^3.6.1",
     "chai": "^4.1.2",
-    "coveralls": "^3.0.0",
-    "css-loader": "^0.28.10",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "coveralls": "^3.0.1",
+    "css-loader": "^0.28.11",
     "husky": "^0.14.3",
-    "lint-staged": "^7.1.2",
-    "lodash": "^4.17.5",
-    "material-ui": "^0.20.0",
-    "mocha": "^5.0.4",
-    "nyc": "^12.0.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "rxjs": "^5.5.6",
-    "standard": "^11.0.0",
+    "lint-staged": "^7.1.3",
+    "lodash": "^4.17.10",
+    "material-ui": "^0.20.1",
+    "mini-css-extract-plugin": "^0.4.0",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "prettier": "^1.13.4",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "rxjs": "^6.2.0",
+    "standard": "^11.0.1",
     "style-loader": "^0.21.0",
-    "ts-loader": "^4.0.1",
-    "ts-node": "^6.0.0",
-    "tslint": "^5.9.1",
-    "tslint-eslint-rules": "^5.1.0",
-    "typescript": "^2.7.2",
-    "webpack": "^4.1.1",
-    "webpack-bundle-analyzer": "^2.11.1"
+    "ts-loader": "^4.3.1",
+    "ts-node": "^6.1.0",
+    "tslint": "^5.10.0",
+    "tslint-eslint-rules": "^5.3.1",
+    "typescript": "^2.9.1",
+    "webpack": "^4.10.2",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.0.2"
   },
   "dependencies": {
-    "tslib": "^1.9.0"
+    "tslib": "^1.9.2"
   },
   "standard": {
     "globals": [
@@ -70,8 +72,17 @@
       "it"
     ]
   },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "arrowParens": "always",
+    "parser": "typescript"
+  },
   "lint-staged": {
     "*.ts": [
+      "prettier --write",
       "tslint -c tslint.json -p tsconfig.json --fix -e \"**/test/expect/**\"",
       "git add"
     ]
