@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rm -rf lib && tsc -p src/tsconfig.json",
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha && nyc report",
-    "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json && standard \"test/*.js\" \"./*.js\"",
+    "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
     "precommit": "lint-staged",
     "prepare": "npm run build",
     "start": "rm -rf dist && NODE_ENV=production webpack",
@@ -52,7 +52,6 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "rxjs": "^6.2.0",
-    "standard": "^11.0.1",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.3.1",
     "ts-node": "^6.1.0",
