@@ -215,7 +215,7 @@ describe('should compile with camel2UnderlineComponentName', () => {
 
 describe('should compile with transformToDefaultImport', () => {
   const transformer = transformerFactory({
-    libraryDirectory: '../_esm2015/operators',
+    libraryDirectory: '../_esm2015/internal/operators',
     libraryName: 'rxjs/operators',
     style: false,
     camel2DashComponentName: false,
