@@ -39,7 +39,7 @@ function camel2Underline(_str: string) {
 
 function getImportedStructs(node: ts.Node) {
   const structs = new Set<ImportedStruct>()
-  node.forEachChild(importChild => {
+  node.forEachChild((importChild) => {
     if (!ts.isImportClause(importChild)) {
       return
     }
@@ -71,7 +71,7 @@ function getImportedStructs(node: ts.Node) {
       // import { foo as bar } from 'baz'
       structs.add({
         importName: importSpecifier.propertyName.text,
-        variableName: importSpecifier.name.text
+        variableName: importSpecifier.name.text,
       })
     })
   })
@@ -83,20 +83,21 @@ function createDistAst(struct: ImportedStruct, options: Options) {
 
   const { libraryName } = options
   const _importName = struct.importName
-  const importName = options.camel2UnderlineComponentName ?
-    camel2Underline(_importName) :
-    options.camel2DashComponentName ?
-      camel2Dash(_importName) :
-      _importName
+  const importName = options.camel2UnderlineComponentName
+    ? camel2Underline(_importName)
+    : options.camel2DashComponentName
+      ? camel2Dash(_importName)
+      : _importName
 
-  const libraryDirectory = typeof options.libraryDirectory === 'function' ?
-    options.libraryDirectory(_importName) :
-    join((options.libraryDirectory || ''), importName)
+  const libraryDirectory =
+    typeof options.libraryDirectory === 'function'
+      ? options.libraryDirectory(_importName)
+      : join(options.libraryDirectory || '', importName)
 
   /* istanbul ignore next  */
   if (process.env.NODE_ENV !== 'production') {
     if (libraryDirectory == null) {
-      console.warn(`custom libraryDirectory resolve a ${ libraryDirectory } path`)
+      console.warn(`custom libraryDirectory resolve a ${libraryDirectory} path`)
     }
   }
 
@@ -108,51 +109,46 @@ function createDistAst(struct: ImportedStruct, options: Options) {
       undefined,
       ts.createImportClause(
         struct.variableName || !options.transformToDefaultImport ? undefined : ts.createIdentifier(struct.importName),
-        struct.variableName ? ts.createNamedImports([
-          ts.createImportSpecifier(
-            options.transformToDefaultImport ? ts.createIdentifier('default') : ts.createIdentifier(struct.importName),
-            ts.createIdentifier(struct.variableName)
-          )
-        ]) : options.transformToDefaultImport ? undefined : ts.createNamedImports([
-          ts.createImportSpecifier(
-            undefined,
-            ts.createIdentifier(struct.importName)
-          )
-        ])
+        struct.variableName
+          ? ts.createNamedImports([
+              ts.createImportSpecifier(
+                options.transformToDefaultImport
+                  ? ts.createIdentifier('default')
+                  : ts.createIdentifier(struct.importName),
+                ts.createIdentifier(struct.variableName),
+              ),
+            ])
+          : options.transformToDefaultImport
+            ? undefined
+            : ts.createNamedImports([ts.createImportSpecifier(undefined, ts.createIdentifier(struct.importName))]),
       ),
-      ts.createLiteral(importPath)
+      ts.createLiteral(importPath),
     )
 
     astNodes.push(scriptNode)
 
     if (options.style) {
       const { style } = options
-      const stylePath = (typeof style === 'function')
-        ? style(importPath)
-        : `${ importPath }/style/${ style === true ? 'index' : style }.js`
+      const stylePath =
+        typeof style === 'function' ? style(importPath) : `${importPath}/style/${style === true ? 'index' : style}.js`
 
-      const styleNode = ts.createImportDeclaration(
-        undefined,
-        undefined,
-        undefined,
-        ts.createLiteral(stylePath)
-      )
+      const styleNode = ts.createImportDeclaration(undefined, undefined, undefined, ts.createLiteral(stylePath))
 
       astNodes.push(styleNode)
     }
-  // tslint:disable-next-line:no-empty
+    // tslint:disable-next-line:no-empty
   } catch (e) {
-    astNodes.push(ts.createImportDeclaration(
-      undefined,
-      undefined,
-      ts.createImportClause(
+    astNodes.push(
+      ts.createImportDeclaration(
         undefined,
-        ts.createNamedImports([
-          ts.createImportSpecifier(undefined, ts.createIdentifier(_importName))
-        ])
+        undefined,
+        ts.createImportClause(
+          undefined,
+          ts.createNamedImports([ts.createImportSpecifier(undefined, ts.createIdentifier(_importName))]),
+        ),
+        ts.createLiteral(libraryName!),
       ),
-      ts.createLiteral(libraryName!)
-    ))
+    )
   }
   return astNodes
 }
@@ -162,16 +158,17 @@ const defaultOptions = {
   libraryDirectory: 'lib',
   style: false,
   camel2DashComponentName: true,
-  transformToDefaultImport: true
+  transformToDefaultImport: true,
 }
 
-export function createTransformer(_options: Partial<Options> | Array<Partial<Options>> = { }) {
+export function createTransformer(_options: Partial<Options> | Array<Partial<Options>> = {}) {
   const mergeDefault = (options: Partial<Options>) => ({ ...defaultOptions, ...options })
-  const optionsArray: Options[] = Array.isArray(_options) ? _options.map(options => mergeDefault(options)) : [mergeDefault(_options)]
+  const optionsArray: Options[] = Array.isArray(_options)
+    ? _options.map((options) => mergeDefault(options))
+    : [mergeDefault(_options)]
 
   const transformer: ts.TransformerFactory<ts.SourceFile> = (context) => {
     const visitor: ts.Visitor = (node) => {
-
       if (ts.isSourceFile(node)) {
         return ts.visitEachChild(node, visitor, context)
       }
@@ -182,7 +179,7 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
 
       const importedLibName = (<ts.StringLiteral>node.moduleSpecifier).text
 
-      const options = optionsArray.find(_ => _.libraryName === importedLibName)
+      const options = optionsArray.find((_) => _.libraryName === importedLibName)
 
       if (!options) {
         return node
@@ -193,12 +190,13 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
         return node
       }
 
-      return Array
-        .from(structs)
-        .reduce((acc, struct) => {
+      return Array.from(structs).reduce(
+        (acc, struct) => {
           const nodes = createDistAst(struct, options)
           return acc.concat(nodes)
-        }, <ts.Node[]>[])
+        },
+        <ts.Node[]>[],
+      )
     }
 
     return (node) => ts.visitNode(node, visitor)
