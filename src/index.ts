@@ -103,7 +103,7 @@ function createDistAst(struct: ImportedStruct, options: Options) {
 
   const importPath = join(libraryName!, libraryDirectory)
   try {
-    require.resolve(pathJoin(process.cwd(), 'node_modules', importPath))
+    require.resolve(importPath)
     const scriptNode = ts.createImportDeclaration(
       undefined,
       undefined,
