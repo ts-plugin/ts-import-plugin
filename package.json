@@ -54,7 +54,7 @@
     "rxjs": "^6.2.0",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.3.1",
-    "ts-node": "^6.1.0",
+    "ts-node": "^7.0.0",
     "tslint": "^5.10.0",
     "tslint-eslint-rules": "^5.3.1",
     "typescript": "^2.9.1",
