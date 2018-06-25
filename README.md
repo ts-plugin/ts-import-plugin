@@ -235,7 +235,11 @@ transformerFactory({
 
 ## [RxJS](https://github.com/reactivex/rxjs)
 
+see [rxjs-webpack-treeshaking-example](https://github.com/Brooooooklyn/rxjs-webpack-treeshaking-example) for more details
+
 > only compatible for 5.5+
+
+- RxJS v5:
 
 ```ts
 transformerFactory({
@@ -245,4 +249,23 @@ transformerFactory({
   camel2DashComponentName: false,
   transformToDefaultImport: false
 })
+```
+
+- RxJS v6:
+
+```ts
+transformerFactory([
+  {
+    libraryDirectory: '../_esm5/internal/operators',
+    libraryName: 'rxjs/operators',
+    camel2DashComponentName: false,
+    transformToDefaultImport: false
+  },
+  {
+    libraryDirectory: '../_esm5/internal/observable',
+    libraryName: 'rxjs',
+    camel2DashComponentName: false,
+    transformToDefaultImport: false,
+  }
+])
 ```
