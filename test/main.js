@@ -105,6 +105,37 @@ describe('should compile with custom style path generator', () => {
   })
 })
 
+describe('should compile with custom style path generator ignore', () => {
+  const transformer = transformerFactory({
+    style: (path) => {
+      if (path === 'antd/lib/alert') {
+        return false
+      }
+      return `${path}/style/index.styl`
+    },
+  })
+
+  fixtureDir.forEach(v => {
+    it(`compile ${v}`, () => {
+      const sourceCode = fs.readFileSync(resolve(__dirname, 'fixtures', v), 'utf-8')
+
+      const source = ts.createSourceFile(v, sourceCode, ts.ScriptTarget.ES2016, true)
+
+      const result = ts.transform(source, [ transformer ])
+
+      const transformedSourceFile = result.transformed[0]
+
+      const resultCode = printer.printFile(transformedSourceFile)
+
+      const expectCode = fs.readFileSync(resolve(__dirname, 'expect', 'with-custom-style-path-generator-ignore', v), 'utf-8')
+
+      expect(resultCode).to.equal(expectCode)
+
+      result.dispose()
+    })
+  })
+})
+
 describe('should compile without style', () => {
   const transformer = transformerFactory()
 
