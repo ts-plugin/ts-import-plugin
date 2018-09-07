@@ -132,9 +132,10 @@ function createDistAst(struct: ImportedStruct, options: Options) {
       const stylePath =
         typeof style === 'function' ? style(importPath) : `${importPath}/style/${style === true ? 'index' : style}.js`
 
-      const styleNode = ts.createImportDeclaration(undefined, undefined, undefined, ts.createLiteral(stylePath))
-
-      astNodes.push(styleNode)
+      if (stylePath) {
+        const styleNode = ts.createImportDeclaration(undefined, undefined, undefined, ts.createLiteral(stylePath))
+        astNodes.push(styleNode)
+      }
     }
     // tslint:disable-next-line:no-empty
   } catch (e) {
