@@ -21,12 +21,13 @@ module.exports = {
         test: /\.(jsx|tsx|js|ts)$/,
         loader: 'ts-loader',
         options: {
-          transpileOnly: true,
           getCustomTransformers: () => ({
             before: [tsImportPlugin],
           }),
           compilerOptions: {
             module: 'esnext',
+            allowJs: true,
+            declaration: false,
           },
         },
         exclude: /node_modules/,
