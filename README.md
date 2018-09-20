@@ -135,7 +135,7 @@ tsImportPluginFactory({
 
 ```js
 {
-  libraryName: 'material-ui',
+  libraryName: '@material-ui/core',
   libraryDirectory: '',
   camel2DashComponentName: false
 }
@@ -152,7 +152,7 @@ example:
     libraryDirectory: 'lib',
     style: true
   }, {
-    libraryName: 'material-ui',
+    libraryName: '@material-ui/core',
     libraryDirectory: '',
     camel2DashComponentName: false
   }
@@ -196,16 +196,16 @@ transformerFactory({ libraryName: 'antd-mobile', style: 'css', styleExt: 'css.we
 transformerFactory({ libraryName: 'antd-mobile', style: 'css' })
 ```
 
-## [material-ui](https://github.com/callemall/material-ui)
+## [material-ui](https://github.com/mui-org/material-ui)
 
 ```ts
-import { FloatingActionButton } from 'material-ui'
-import { ContentRemove, NavigationRefresh, ContentAdd } from 'material-ui/svg-icons'
+import { Button } from '@material-ui/core'
+import { Remove, Refresh, Add } from '@material-ui/icons'
 ```
 
 ```ts
 transformerFactory({
-  libraryName: 'material-ui',
+  libraryName: '@material-ui/core',
   libraryDirectory: '',
   camel2DashComponentName: false
 })
@@ -227,7 +227,7 @@ transformerFactory({
         return acc + cur
       }, '')
   },
-  libraryName: 'material-ui/svg-icons',
+  libraryName: '@material-ui/icons',
   style: false,
   camel2DashComponentName: false
 })
