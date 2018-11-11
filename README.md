@@ -233,6 +233,23 @@ transformerFactory({
 })
 ```
 
+## [element-ui](https://github.com/ElemeFE/element)
+
+```ts
+import { Button } from 'element-ui'
+```
+
+```ts
+transformerFactory({
+    libraryName: 'element-ui',
+    libraryDirectory: 'lib',
+    camel2DashComponentName: true,
+    style: (path: string) =>
+        join('element-ui', 'lib', 'theme-chalk', `${
+            camel2Dash(basename(path, '.js'))}.css`),
+})
+```
+
 ## [RxJS](https://github.com/reactivex/rxjs)
 
 see [rxjs-webpack-treeshaking-example](https://github.com/Brooooooklyn/rxjs-webpack-treeshaking-example) for more details
