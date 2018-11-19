@@ -8,7 +8,6 @@
     "build": "rm -rf lib && tsc -p src/tsconfig.json",
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha && nyc report",
     "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
-    "precommit": "lint-staged",
     "prepare": "npm run build",
     "start": "rm -rf dist && NODE_ENV=production webpack",
     "test": "mocha",
@@ -85,5 +84,10 @@
       "tslint -c tslint.json -p tsconfig.json --fix -e \"**/test/expect/**\"",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
