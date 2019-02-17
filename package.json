@@ -36,7 +36,7 @@
     "@types/node": "^11.9.0",
     "@types/react": "^16.7.6",
     "@types/react-dom": "^16.0.9",
-    "antd": "^3.10.8",
+    "antd": "^3.13.3",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "css-loader": "^2.0.0",
