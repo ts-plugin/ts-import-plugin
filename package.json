@@ -36,6 +36,7 @@
     "@types/node": "^11.9.0",
     "@types/react": "^16.7.6",
     "@types/react-dom": "^16.0.9",
+    "@types/resolve-cwd": "^2.0.0",
     "antd": "^3.13.3",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
@@ -62,6 +63,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "resolve-cwd": "^2.0.0",
     "tslib": "^1.9.3"
   },
   "standard": {

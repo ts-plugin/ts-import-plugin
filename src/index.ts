@@ -1,5 +1,6 @@
 import * as ts from 'typescript'
 import { join as pathJoin, sep } from 'path'
+import resolveCwd = require('resolve-cwd');
 
 export interface Options {
   libraryName?: string
@@ -103,7 +104,7 @@ function createDistAst(struct: ImportedStruct, options: Options) {
 
   const importPath = join(libraryName!, libraryDirectory)
   try {
-    require.resolve(importPath)
+    resolveCwd(importPath)
     const scriptNode = ts.createImportDeclaration(
       undefined,
       undefined,
