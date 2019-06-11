@@ -40,7 +40,7 @@
     "antd": "^3.18.2",
     "chai": "^4.2.0",
     "coveralls": "^3.0.3",
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.0.0",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "lodash": "^4.17.11",
