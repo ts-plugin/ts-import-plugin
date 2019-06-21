@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/ts-import-plugin.svg)](https://www.npmjs.com/package/ts-import-plugin)
+[![Financial Contributors on Open Collective](https://opencollective.com/ts-import-plugin/all/badge.svg?label=financial+contributors)](https://opencollective.com/ts-import-plugin) [![npm version](https://badge.fury.io/js/ts-import-plugin.svg)](https://www.npmjs.com/package/ts-import-plugin)
 [![CircleCI](https://circleci.com/gh/Brooooooklyn/ts-import-plugin.svg?style=svg)](https://circleci.com/gh/Brooooooklyn/ts-import-plugin)
 [![Coverage Status](https://coveralls.io/repos/github/Brooooooklyn/ts-import-plugin/badge.svg)](https://coveralls.io/github/Brooooooklyn/ts-import-plugin)
 
@@ -285,3 +285,33 @@ transformerFactory([
   }
 ])
 ```
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/undefined/undefined/graphs/contributors"><img src="https://opencollective.com/ts-import-plugin/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/ts-import-plugin/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/ts-import-plugin"><img src="https://opencollective.com/ts-import-plugin/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/ts-import-plugin/contribute)]
+
+<a href="https://opencollective.com/ts-import-plugin/organization/0/website"><img src="https://opencollective.com/ts-import-plugin/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/1/website"><img src="https://opencollective.com/ts-import-plugin/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/2/website"><img src="https://opencollective.com/ts-import-plugin/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/3/website"><img src="https://opencollective.com/ts-import-plugin/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/4/website"><img src="https://opencollective.com/ts-import-plugin/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/5/website"><img src="https://opencollective.com/ts-import-plugin/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/6/website"><img src="https://opencollective.com/ts-import-plugin/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/7/website"><img src="https://opencollective.com/ts-import-plugin/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/8/website"><img src="https://opencollective.com/ts-import-plugin/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/ts-import-plugin/organization/9/website"><img src="https://opencollective.com/ts-import-plugin/organization/9/avatar.svg"></a>

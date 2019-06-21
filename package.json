@@ -11,7 +11,8 @@
     "prepare": "npm run build",
     "start": "rm -rf dist && NODE_ENV=production webpack",
     "test": "mocha",
-    "watch": "tsc -p ./src/tsconfig.json -w --diagnostics"
+    "watch": "tsc -p ./src/tsconfig.json -w --diagnostics",
+    "postinstall": "opencollective-postinstall || true"
   },
   "repository": {
     "type": "git",
@@ -63,7 +64,8 @@
     "webpack-cli": "^3.3.4"
   },
   "dependencies": {
-    "tslib": "^1.10.0"
+    "tslib": "^1.10.0",
+    "opencollective-postinstall": "^2.0.2"
   },
   "standard": {
     "globals": [
@@ -97,5 +99,9 @@
       "test/**/*.{js,ts}"
     ],
     "check-coverage": true
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/ts-import-plugin"
   }
 }
