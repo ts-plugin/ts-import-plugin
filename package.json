@@ -42,7 +42,7 @@
     "chai": "^4.2.0",
     "coveralls": "^3.0.4",
     "css-loader": "^3.0.0",
-    "husky": "^2.4.1",
+    "husky": "^3.0.0",
     "lint-staged": "^8.2.1",
     "lodash": "^4.17.11",
     "material-ui": "^0.20.2",
