@@ -46,7 +46,7 @@
     "lint-staged": "^9.2.0",
     "lodash": "^4.17.14",
     "material-ui": "^0.20.2",
-    "mini-css-extract-plugin": "^0.7.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
     "prettier": "^1.18.2",
