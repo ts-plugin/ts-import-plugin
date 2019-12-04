@@ -4,8 +4,6 @@
 
 # ts-import-plugin
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Brooooooklyn/ts-import-plugin.svg)](https://greenkeeper.io/)
-
 Modular import plugin for TypeScript, compatible with antd, antd-mobile and so on.
 
 webpack template `./webpack.config.js`, run: `npm start` to see the bundle analyzer.
