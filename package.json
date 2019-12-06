@@ -8,7 +8,6 @@
     "build": "rm -rf lib && tsc -p src/tsconfig.json",
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha && nyc report",
     "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
-    "prepare": "npm run build",
     "start": "rm -rf dist && NODE_ENV=production webpack",
     "test": "mocha",
     "watch": "tsc -p ./src/tsconfig.json -w --diagnostics",
@@ -40,7 +39,7 @@
     "@types/react-dom": "^16.9.4",
     "antd": "^3.26.0",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.9",
+    "codecov": "^3.6.1",
     "css-loader": "^3.2.1",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
@@ -64,8 +63,8 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "tslib": "^1.10.0",
-    "opencollective-postinstall": "^2.0.2"
+    "opencollective-postinstall": "^2.0.2",
+    "tslib": "^1.10.0"
   },
   "standard": {
     "globals": [

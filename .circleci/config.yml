@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/ts-import-plugin
   docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
 
 version: 2
 jobs:
@@ -13,19 +13,15 @@ jobs:
       - run: curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
       - run: sudo ln -sf ~/.yarn/bin/yarn /usr/local/bin/yarn
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
-          name: yarn-with-greenkeeper
-          command: |
-            sudo yarn global add greenkeeper-lockfile@1
-            yarn
+          name: yarn-install
+          command: yarn
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run: greenkeeper-lockfile-update
       - run: npm run build
-      - run: greenkeeper-lockfile-upload
       - persist_to_workspace:
           root: ~/ts-import-plugin
           paths:
@@ -39,7 +35,7 @@ jobs:
       - run: npm run cover
       - run:
           name: test-coverage
-          command: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+          command: npx codecov
 
   deploy:
     <<: *defaults
