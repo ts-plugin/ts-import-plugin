@@ -1,6 +1,6 @@
 [![Financial Contributors on Open Collective](https://opencollective.com/ts-import-plugin/all/badge.svg?label=financial+contributors)](https://opencollective.com/ts-import-plugin) [![npm version](https://badge.fury.io/js/ts-import-plugin.svg)](https://www.npmjs.com/package/ts-import-plugin)
 [![CircleCI](https://circleci.com/gh/Brooooooklyn/ts-import-plugin.svg?style=svg)](https://circleci.com/gh/Brooooooklyn/ts-import-plugin)
-[![Coverage Status](https://coveralls.io/repos/github/Brooooooklyn/ts-import-plugin/badge.svg)](https://coveralls.io/github/Brooooooklyn/ts-import-plugin)
+[![codecov](https://codecov.io/gh/Brooooooklyn/ts-import-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/Brooooooklyn/ts-import-plugin)
 
 # ts-import-plugin
 
