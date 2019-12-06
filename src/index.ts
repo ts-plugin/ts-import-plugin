@@ -3,7 +3,7 @@ import { join as pathJoin, sep } from 'path'
 
 export interface Options {
   libraryName?: string
-  style?: boolean | 'css' | string | ((name: string) => string)
+  style?: boolean | 'css' | 'css.web' | string | ((name: string) => string | false)
   libraryDirectory?: ((name: string) => string) | string
   camel2DashComponentName?: boolean
   camel2UnderlineComponentName?: boolean
@@ -195,13 +195,10 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
         return node
       }
 
-      return Array.from(structs).reduce(
-        (acc, struct) => {
-          const nodes = createDistAst(struct, options)
-          return acc.concat(nodes)
-        },
-        <ts.Node[]>[],
-      )
+      return Array.from(structs).reduce((acc, struct) => {
+        const nodes = createDistAst(struct, options)
+        return acc.concat(nodes)
+      }, <ts.Node[]>[])
     }
 
     return (node) => ts.visitNode(node, visitor)

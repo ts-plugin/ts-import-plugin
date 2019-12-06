@@ -6,12 +6,11 @@
   "typings": "index.d.ts",
   "scripts": {
     "build": "rm -rf lib && tsc -p src/tsconfig.json",
-    "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha && nyc report",
+    "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test ava && nyc report",
     "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
     "start": "rm -rf dist && NODE_ENV=production webpack",
-    "test": "mocha",
-    "watch": "tsc -p ./src/tsconfig.json -w --diagnostics",
-    "postinstall": "opencollective-postinstall || true"
+    "test": "ava",
+    "watch": "tsc -p ./src/tsconfig.json -w --diagnostics"
   },
   "repository": {
     "type": "git",
@@ -30,15 +29,13 @@
   "license": "MIT",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^0.1.3",
-    "@types/chai": "^4.2.6",
     "@types/lodash": "^4.14.149",
     "@types/material-ui": "^0.21.7",
-    "@types/mocha": "^5.2.7",
     "@types/node": "^12.12.14",
     "@types/react": "^16.9.14",
     "@types/react-dom": "^16.9.4",
     "antd": "^3.26.0",
-    "chai": "^4.2.0",
+    "ava": "^2.4.0",
     "codecov": "^3.6.1",
     "css-loader": "^3.2.1",
     "husky": "^3.1.0",
@@ -46,12 +43,12 @@
     "lodash": "^4.17.15",
     "material-ui": "^0.20.2",
     "mini-css-extract-plugin": "^0.8.0",
-    "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "rxjs": "^6.5.3",
+    "source-map-support": "^0.5.16",
     "style-loader": "^1.0.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.5.4",
@@ -63,13 +60,21 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "opencollective-postinstall": "^2.0.2",
     "tslib": "^1.10.0"
   },
-  "standard": {
-    "globals": [
-      "describe",
-      "it"
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "files": [
+      "test/specs.ts"
+    ],
+    "sources": [
+      "src/**/*.ts"
     ]
   },
   "prettier": {
