@@ -5,6 +5,7 @@ export interface Options {
   libraryName?: string
   style?: boolean | 'css' | 'css.web' | string | ((name: string) => string | false)
   libraryDirectory?: ((name: string) => string) | string
+  libraryOverride?: boolean
   camel2DashComponentName?: boolean
   camel2UnderlineComponentName?: boolean
   transformToDefaultImport?: boolean
@@ -82,7 +83,7 @@ function getImportedStructs(node: ts.Node) {
 function createDistAst(struct: ImportedStruct, options: Options) {
   const astNodes: ts.Node[] = []
 
-  const { libraryName } = options
+  const { libraryName, libraryOverride } = options
   const _importName = struct.importName
   const importName = options.camel2UnderlineComponentName
     ? camel2Underline(_importName)
@@ -102,7 +103,8 @@ function createDistAst(struct: ImportedStruct, options: Options) {
     }
   }
 
-  const importPath = join(libraryName!, libraryDirectory)
+  const importPath = !libraryOverride ? join(libraryName!, libraryDirectory) : libraryDirectory
+
   try {
     require.resolve(importPath, {
       paths: [process.cwd(), ...options.resolveContext!],
@@ -164,6 +166,7 @@ const defaultOptions = {
   camel2DashComponentName: true,
   transformToDefaultImport: true,
   resolveContext: [],
+  libraryOverride: false,
 }
 
 export function createTransformer(_options: Partial<Options> | Array<Partial<Options>> = {}) {
