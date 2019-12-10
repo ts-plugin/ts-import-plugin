@@ -110,13 +110,16 @@ module.exports = {
 - style `boolean | string | ((path: string) => string)`
 
   default `false`
-- libraryDirectory `string | ((name: string) => string)` 
+- libraryDirectory `string | ((name: string) => string)`
 
   default `'lib'`
 - camel2DashComponentName `boolean`
 
   default `true`
 - camel2UnderlineComponentName `boolean`
+
+  default `false`
+- libraryOverride `boolean`
 
   default `false`
 

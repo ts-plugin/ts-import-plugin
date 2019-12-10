@@ -20,12 +20,13 @@ const suites: { title: string, config: Options | Options[] }[] = [
   },
   {
     title: 'should be able to compile with custom style path generator ignore confing',
-    config: {style: (path) => {
-      if (path === 'antd/lib/alert') {
-        return false
-      }
-      return `${path}/style/index.styl`
-    },
+    config: {
+      style: (path) => {
+        if (path === 'antd/lib/alert') {
+          return false
+        }
+        return `${path}/style/index.styl`
+      },
     }
   },
   {
@@ -48,34 +49,34 @@ const suites: { title: string, config: Options | Options[] }[] = [
   {
     title: 'should be able to compile with transformToDefaultImport config',
     config: {
-    libraryDirectory: '../_esm2015/internal/operators',
-    libraryName: 'rxjs/operators',
-    style: false,
-    camel2DashComponentName: false,
-    transformToDefaultImport: false
-  }
+      libraryDirectory: '../_esm2015/internal/operators',
+      libraryName: 'rxjs/operators',
+      style: false,
+      camel2DashComponentName: false,
+      transformToDefaultImport: false
+    }
   },
   {
     title: 'should be able to compile with custom libraryDirectory resolver config',
     config: {
-    libraryDirectory: importName => {
-      const stringVec = importName.split(/([A-Z][a-z]+|[0-9]*)/)
-        .filter(s => s.length)
-        .map(s => s.toLocaleLowerCase())
+      libraryDirectory: importName => {
+        const stringVec = importName.split(/([A-Z][a-z]+|[0-9]*)/)
+          .filter(s => s.length)
+          .map(s => s.toLocaleLowerCase())
 
-      return stringVec
-        .reduce((acc, cur, index) => {
-          if (index > 1) {
-            return acc + '-' + cur
-          } else if (index === 1) {
-            return acc + '/' + cur
-          }
-          return acc + cur
-        }, '')
-    },
-    libraryName: 'material-ui/svg-icons',
-    style: false,
-    camel2DashComponentName: false
+        return stringVec
+          .reduce((acc, cur, index) => {
+            if (index > 1) {
+              return acc + '-' + cur
+            } else if (index === 1) {
+              return acc + '/' + cur
+            }
+            return acc + cur
+          }, '')
+      },
+      libraryName: 'material-ui/svg-icons',
+      style: false,
+      camel2DashComponentName: false
     }
   },
   {
@@ -92,6 +93,19 @@ const suites: { title: string, config: Options | Options[] }[] = [
       libraryDirectory: '',
       camel2DashComponentName: false
     }
+    ]
+  },
+  {
+    title: 'should be able to override the library reference entirely',
+    config: [
+      {
+        style: false,
+        libraryName: 'lodash',
+        libraryDirectory: (importName) => {
+          return `lodash-es/${importName}`
+        },
+        libraryOverride: true
+      }
     ]
   }
 ]
