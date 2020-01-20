@@ -39,7 +39,7 @@
     "codecov": "^3.6.1",
     "css-loader": "^3.2.1",
     "husky": "^4.0.0",
-    "lint-staged": "^9.5.0",
+    "lint-staged": "^10.0.1",
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
     "material-ui": "^0.20.2",
