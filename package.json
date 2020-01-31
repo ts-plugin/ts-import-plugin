@@ -64,7 +64,6 @@
     "tslib": "^1.10.0"
   },
   "ava": {
-    "compileEnhancements": false,
     "extensions": [
       "ts"
     ],
@@ -73,9 +72,6 @@
     ],
     "files": [
       "test/specs.ts"
-    ],
-    "sources": [
-      "src/**/*.ts"
     ]
   },
   "prettier": {
