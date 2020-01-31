@@ -85,8 +85,7 @@
   "lint-staged": {
     "*.ts": [
       "prettier --write",
-      "tslint -c tslint.json -p tsconfig.json --fix -e \"**/test/expect/**\"",
-      "git add"
+      "tslint -c tslint.json -p tsconfig.json --fix -e \"**/test/expect/**\""
     ]
   },
   "husky": {
