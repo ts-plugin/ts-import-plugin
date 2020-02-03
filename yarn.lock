@@ -614,9 +614,9 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.1:
     color-convert "^2.0.1"
 
 antd@^3.26.0:
-  version "3.26.7"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-3.26.7.tgz#271555f4862b747019defb972f70b7dd4015fd3f"
-  integrity sha512-WPsU3ulEUA1vZfVO9PmDNWkYueaLPoE74EJlfPqW2rZjKl7YMkMxJleSVCM9FqVI4PNLbIVr0hoieM9yZiEBFQ==
+  version "3.26.8"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-3.26.8.tgz#e40982c5cdb6c5c2c5f037ead27889b5f71e4ea3"
+  integrity sha512-Cz9VVGXG3e2qVAfBwC9SfYGe8bhsD/fQr5tiuRWXkQGSJe4FPJEd04u+6QgBCuQ8Y36kBZr1xDiWky6dwoJvsA==
   dependencies:
     "@ant-design/create-react-context" "^0.2.4"
     "@ant-design/icons" "~2.1.1"
