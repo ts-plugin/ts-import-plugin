@@ -1,5 +1,10 @@
+import test from 'ava'
+import * as fs from 'fs'
+import { resolve } from 'path'
+import * as ts from 'typescript'
+
 import { createSpec } from './utils'
-import { Options } from '../src'
+import { Options, createTransformer } from '../src'
 
 const suites: { title: string, config: Options | Options[] }[] = [
   {
@@ -113,3 +118,20 @@ const suites: { title: string, config: Options | Options[] }[] = [
 for (const suite of suites) {
   createSpec(suite.title, suite.config)
 }
+
+test('should throw if custom style resolver thrown', (t) => {
+  const sourceCode = fs.readFileSync(resolve(__dirname, 'fixtures', 'index.tsx'), 'utf-8')
+
+  const source = ts.createSourceFile('index.tsx', sourceCode, ts.ScriptTarget.ESNext, true)
+
+  const error = new TypeError('Error happend')
+
+  const transformer = createTransformer({
+    style: () => {
+      throw error
+    }
+  })
+
+  const transpile = () => ts.transform(source, [transformer])
+  t.throws(transpile, null, error.message)
+})

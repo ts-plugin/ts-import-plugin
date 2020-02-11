@@ -105,10 +105,28 @@ function createDistAst(struct: ImportedStruct, options: Options) {
 
   const importPath = !libraryOverride ? join(libraryName!, libraryDirectory) : libraryDirectory
 
+  let canResolveImportPath = true
+
   try {
     require.resolve(importPath, {
       paths: [process.cwd(), ...options.resolveContext!],
     })
+  } catch (e) {
+    canResolveImportPath = false
+    astNodes.push(
+      ts.createImportDeclaration(
+        undefined,
+        undefined,
+        ts.createImportClause(
+          undefined,
+          ts.createNamedImports([ts.createImportSpecifier(undefined, ts.createIdentifier(_importName))]),
+        ),
+        ts.createLiteral(libraryName!),
+      ),
+    )
+  }
+
+  if (canResolveImportPath) {
     const scriptNode = ts.createImportDeclaration(
       undefined,
       undefined,
@@ -134,28 +152,20 @@ function createDistAst(struct: ImportedStruct, options: Options) {
 
     if (options.style) {
       const { style } = options
-      const stylePath =
-        typeof style === 'function' ? style(importPath) : `${importPath}/style/${style === true ? 'index' : style}.js`
+      let stylePath: string | boolean
+      if (typeof style === 'function') {
+        stylePath = style(importPath)
+      } else {
+        stylePath = `${importPath}/style/${style === true ? 'index' : style}.js`
+      }
 
       if (stylePath) {
         const styleNode = ts.createImportDeclaration(undefined, undefined, undefined, ts.createLiteral(stylePath))
         astNodes.push(styleNode)
       }
     }
-    // tslint:disable-next-line:no-empty
-  } catch (e) {
-    astNodes.push(
-      ts.createImportDeclaration(
-        undefined,
-        undefined,
-        ts.createImportClause(
-          undefined,
-          ts.createNamedImports([ts.createImportSpecifier(undefined, ts.createIdentifier(_importName))]),
-        ),
-        ts.createLiteral(libraryName!),
-      ),
-    )
   }
+
   return astNodes
 }
 
