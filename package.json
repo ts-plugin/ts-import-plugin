@@ -12,7 +12,7 @@
     "build:esm": "tsc -p src/tsconfig.json -m esnext --outDir esm -d false",
     "build:next": "tsc -p src/tsconfig.json -m esnext --target ES2018 --outDir next -d false",
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test ava && nyc report",
-    "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
+    "lint": "eslint . -c ./.eslintrc.yml 'src/**/*.{ts,tsx}' './*.js'",
     "start": "rm -rf dist && NODE_ENV=production webpack",
     "test": "ava",
     "watch": "tsc -p ./src/tsconfig.json -w --diagnostics"
@@ -34,16 +34,25 @@
   "author": "lynweklm@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/lodash": "^4.14.149",
     "@types/material-ui": "^0.21.7",
     "@types/node": "^13.7.7",
     "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.4",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/parser": "^2.21.0",
     "antd": "^4.0.0",
-    "ava": "^3.4.0",
-    "codecov": "^3.6.1",
-    "css-loader": "^3.2.1",
+    "ava": "^3.5.0",
+    "codecov": "^3.6.5",
+    "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "lodash": "^4.17.15",
@@ -51,23 +60,22 @@
     "material-ui": "^0.20.2",
     "mini-css-extract-plugin": "^0.9.0",
     "nyc": "^15.0.0",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "rollup": "^1.32.0",
     "rollup-plugin-typescript2": "^0.26.0",
-    "rxjs": "^6.5.3",
+    "rxjs": "^6.5.4",
     "shx": "^0.3.2",
     "source-map-support": "^0.5.16",
-    "style-loader": "^1.0.1",
+    "style-loader": "^1.1.3",
     "ts-loader": "^6.2.1",
-    "ts-node": "^8.5.4",
-    "tslint": "^6.0.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.8.2",
-    "webpack": "^4.41.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.41.6",
     "webpack-bundle-analyzer": "^3.6.0",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "tslib": "^1.11.1"
@@ -92,9 +100,9 @@
     "parser": "typescript"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.@(js|ts)": [
       "prettier --write",
-      "tslint -c tslint.json -p tsconfig.json --fix -e \"**/test/expect/**\""
+      "eslint -c .eslintrc.yml --fix"
     ]
   },
   "husky": {

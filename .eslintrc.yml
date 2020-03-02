@@ -1,0 +1,120 @@
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2020
+  sourceType: module
+
+env:
+  browser: true
+  es6: true
+  node: true
+  jest: true
+
+plugins:
+  - import
+  - sonarjs
+  - react-hooks
+  
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
+  - plugin:sonarjs/recommended
+  - plugin:prettier/recommended
+
+settings:
+  react:
+    pragma: React
+    version: 16.13.0
+
+rules: 
+  # 0 = off, 1 = warn, 2 = error
+  'space-before-function-paren': 0
+  'no-useless-constructor': 0
+  'no-undef': 2
+  'no-console': [2, { allow: ['error', 'warn', 'info', 'assert']}]
+  'comma-dangle': ['error', 'only-multiline']
+  'no-unused-vars': 0
+  'no-var': 2
+  'one-var-declaration-per-line': 2
+  'prefer-const': 2
+  'no-const-assign': 2
+  'no-duplicate-imports': 2
+  'no-use-before-define': [2, { 'functions': false, 'classes': false }]
+  'eqeqeq': [2, 'always', { 'null': 'ignore' }]
+  'no-case-declarations': 0
+  'no-restricted-syntax': [2, {
+    'selector': 'BinaryExpression[operator=/(==|===|!=|!==)/][left.raw=true], BinaryExpression[operator=/(==|===|!=|!==)/][right.raw=true]',
+    'message': Don't compare for equality against boolean literals
+  }]
+
+  'import/first': 2
+  'import/newline-after-import': 2
+
+  'react/prop-types': 0
+  'react/jsx-no-multiline-js': 0
+  'react/jsx-equals-spacing': 0
+  'react/no-find-dom-node': 0
+  'react/jsx-key': 2
+  'react/no-string-refs': 2
+  'react/self-closing-comp': 2
+  'react/no-deprecated': 2
+  # to be confirmed
+  'react/display-name': 0 # 2?
+  'react/jsx-no-target-blank': 0
+  'react/no-unescaped-entities': 0
+
+  'react-hooks/rules-of-hooks': 2
+  'react-hooks/exhaustive-deps': 2
+
+  'sonarjs/cognitive-complexity': 0
+  'sonarjs/no-duplicate-string': 0
+  'sonarjs/no-big-function': 0
+  'sonarjs/no-identical-functions': 0
+  'sonarjs/no-small-switch': 0
+
+overrides:
+  -
+    files:
+      - packages/**/*.{ts,tsx}
+    rules:
+      'no-unused-vars': [2, { varsIgnorePattern: '^_', argsIgnorePattern: '^_', ignoreRestSiblings: true }]
+  
+  -
+    files:
+      - packages/**/*{.ts,.tsx}
+    plugins:
+      - '@typescript-eslint'
+    parserOptions:
+      project: ./tsconfig.json
+    rules:
+      # eslint will treat TS type as undefined stuff
+      'no-undef': 0
+
+      # conflict function override
+      'no-dupe-class-members': 0
+
+      'react/jsx-no-bind': 2
+
+      '@typescript-eslint/no-unused-vars': [2, { varsIgnorePattern: '^_', argsIgnorePattern: '^_', ignoreRestSiblings: true }]
+      '@typescript-eslint/member-ordering': [2, {
+        default: [
+          'public-static-field',
+          'protected-static-field',
+          'private-static-field',
+          'public-static-method',
+          'protected-static-method',
+          'private-static-method',
+          'public-instance-field',
+          'protected-instance-field',
+          'private-instance-field',
+          'public-constructor',
+          'protected-constructor',
+          'private-constructor',
+          'public-instance-method',
+          'protected-instance-method',
+          'private-instance-method'
+        ]
+      }]
+      
