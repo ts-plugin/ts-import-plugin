@@ -21,7 +21,7 @@ export function createSpec(title: string, config: Options | Options[]) {
 
       const transformedSourceFile = result.transformed[0]
 
-      const resultCode = printer.printFile(transformedSourceFile)
+      const resultCode = printer.printFile(transformedSourceFile as ts.SourceFile)
 
       t.snapshot(resultCode)
 

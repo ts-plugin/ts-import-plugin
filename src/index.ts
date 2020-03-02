@@ -97,10 +97,8 @@ function createDistAst(struct: ImportedStruct, options: Options) {
       : join(options.libraryDirectory || '', importName)
 
   /* istanbul ignore next  */
-  if (process.env.NODE_ENV !== 'production') {
-    if (libraryDirectory == null) {
-      console.warn(`custom libraryDirectory resolve a ${libraryDirectory} path`)
-    }
+  if (process.env.NODE_ENV !== 'production' && libraryDirectory == null) {
+    console.warn(`custom libraryDirectory resolve a ${libraryDirectory} path`)
   }
 
   const importPath = !libraryOverride ? join(libraryName!, libraryDirectory) : libraryDirectory
@@ -156,6 +154,7 @@ function createDistAst(struct: ImportedStruct, options: Options) {
       if (typeof style === 'function') {
         stylePath = style(importPath)
       } else {
+        // eslint-disable-next-line no-restricted-syntax
         stylePath = `${importPath}/style/${style === true ? 'index' : style}.js`
       }
 
@@ -185,7 +184,7 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
     ? _options.map((options) => mergeDefault(options))
     : [mergeDefault(_options)]
 
-  const transformer: ts.TransformerFactory<ts.SourceFile> = (context) => {
+  return (context: ts.TransformationContext) => {
     const visitor: ts.Visitor = (node) => {
       if (ts.isSourceFile(node)) {
         return ts.visitEachChild(node, visitor, context)
@@ -214,9 +213,8 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
       }, <ts.Node[]>[])
     }
 
-    return (node) => ts.visitNode(node, visitor)
+    return (node: ts.Node) => ts.visitNode(node, visitor)
   }
-  return transformer
 }
 
 export default createTransformer
