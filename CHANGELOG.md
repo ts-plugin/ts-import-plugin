@@ -1,3 +1,6 @@
+# 1.6.5
+**[Fix]** Missing cjs entry file in `files` field in package.json.
+
 # 1.6.4
 **[Feat]** Add `module` field support
 
