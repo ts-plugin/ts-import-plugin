@@ -29,7 +29,8 @@
   "files": [
     "lib/",
     "esm/",
-    "next/"
+    "next/",
+    "index.js"
   ],
   "author": "lynweklm@gmail.com",
   "license": "MIT",
