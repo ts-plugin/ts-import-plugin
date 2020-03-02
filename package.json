@@ -2,7 +2,7 @@
   "name": "ts-import-plugin",
   "version": "1.6.3",
   "description": "babel-plugin-import TypeScript version",
-  "main": "./lib/index.js",
+  "main": "./index.js",
   "module": "./esm/index.js",
   "jsnext:main": "./next/index.js",
   "typings": "./lib/index.d.ts",
