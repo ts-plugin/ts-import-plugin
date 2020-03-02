@@ -5,3 +5,5 @@ coverage
 .nyc_output
 .vscode
 *.log
+esm
+next

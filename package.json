@@ -2,10 +2,15 @@
   "name": "ts-import-plugin",
   "version": "1.6.3",
   "description": "babel-plugin-import TypeScript version",
-  "main": "index.js",
-  "typings": "index.d.ts",
+  "main": "./lib/index.js",
+  "module": "./esm/index.js",
+  "jsnext:main": "./next/index.js",
+  "typings": "./lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf lib && tsc -p src/tsconfig.json",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:next",
+    "build:cjs": "shx rm -rf lib && tsc -p src/tsconfig.json",
+    "build:esm": "tsc -p src/tsconfig.json -m esnext --outDir esm -d false",
+    "build:next": "tsc -p src/tsconfig.json -m esnext --target ES2018 --outDir next -d false",
     "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test ava && nyc report",
     "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
     "start": "rm -rf dist && NODE_ENV=production webpack",
@@ -22,8 +27,9 @@
     "plugin"
   ],
   "files": [
-    "index.d.ts",
-    "lib/"
+    "lib/",
+    "esm/",
+    "next/"
   ],
   "author": "lynweklm@gmail.com",
   "license": "MIT",
@@ -48,7 +54,10 @@
     "prettier": "^1.19.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "rollup": "^1.32.0",
+    "rollup-plugin-typescript2": "^0.26.0",
     "rxjs": "^6.5.3",
+    "shx": "^0.3.2",
     "source-map-support": "^0.5.16",
     "style-loader": "^1.0.1",
     "ts-loader": "^6.2.1",
