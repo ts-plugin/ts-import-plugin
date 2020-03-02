@@ -1,6 +1,6 @@
 {
   "name": "ts-import-plugin",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "babel-plugin-import TypeScript version",
   "main": "./index.js",
   "module": "./esm/index.js",
