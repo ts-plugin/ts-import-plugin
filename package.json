@@ -65,7 +65,7 @@
     "prettier": "^1.19.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "rollup": "^2.0.5",
+    "rollup": "^2.0.6",
     "rollup-plugin-typescript2": "^0.26.0",
     "rxjs": "^6.5.4",
     "shx": "^0.3.2",
