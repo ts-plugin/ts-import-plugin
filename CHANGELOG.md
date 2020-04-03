@@ -1,3 +1,6 @@
+# 1.6.6
+**[Chore]** Add license file
+
 # 1.6.5
 **[Fix]** Missing cjs entry file in `files` field in package.json.
 

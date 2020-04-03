@@ -30,7 +30,8 @@
     "lib/",
     "esm/",
     "next/",
-    "index.js"
+    "index.js",
+    "LICENSE"
   ],
   "author": "lynweklm@gmail.com",
   "license": "MIT",
