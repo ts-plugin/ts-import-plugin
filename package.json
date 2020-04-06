@@ -46,7 +46,7 @@
     "antd": "^4.1.0",
     "ava": "^3.5.2",
     "codecov": "^3.6.5",
-    "css-loader": "^3.4.2",
+    "css-loader": "^3.5.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
