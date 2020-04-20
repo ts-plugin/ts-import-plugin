@@ -72,7 +72,7 @@
     "shx": "^0.3.2",
     "source-map-support": "^0.5.16",
     "style-loader": "^1.1.4",
-    "ts-loader": "^7.0.0",
+    "ts-loader": "^7.0.1",
     "ts-node": "^8.8.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
