@@ -40,7 +40,7 @@
     "@types/lodash": "^4.14.150",
     "@types/material-ui": "^0.21.7",
     "@types/node": "^13.13.5",
-    "@types/react": "^16.9.34",
+    "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.7",
     "@typescript-eslint/parser": "^2.31.0",
     "antd": "^4.2.0",
