@@ -176,3 +176,4 @@ $RECYCLE.BIN/
 lib
 esm
 next
+bin/ttsc
