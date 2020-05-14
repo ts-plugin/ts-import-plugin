@@ -81,7 +81,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "tslib": "^1.12.0"
+    "tslib": "^2.0.0"
   },
   "ava": {
     "extensions": [
