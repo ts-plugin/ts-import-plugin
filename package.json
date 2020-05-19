@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^2.33.0",
     "antd": "^4.2.2",
     "ava": "^3.8.2",
-    "codecov": "^3.6.5",
+    "codecov": "^3.7.0",
     "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
     "eslint": "^7.0.0",
