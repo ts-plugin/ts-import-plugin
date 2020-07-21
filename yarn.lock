@@ -31,11 +31,12 @@
     insert-css "^2.0.0"
     rc-util "^5.0.1"
 
-"@ant-design/react-slick@~0.26.1":
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/@ant-design/react-slick/-/react-slick-0.26.1.tgz#1462ad1342a83af51b7ea4ee0ae1d76d91d1b3d3"
-  integrity sha512-1CR3vNFxAMmMb9btF6w9yT1xlrhZr6f/K+OkqoCLfWxN7h7jC16UCr1RsGBoFUdSq8bYfTr3pe6AiiCEDsALvA==
+"@ant-design/react-slick@~0.26.3":
+  version "0.26.3"
+  resolved "https://registry.yarnpkg.com/@ant-design/react-slick/-/react-slick-0.26.3.tgz#5ebdd0cc327ed1a92c0c69e4599efa00834a6ca8"
+  integrity sha512-FhaFfS+oea0P5WvhaM7BC2/P9r4F0yMoewBpDqVkOq+JxEiKRHJ7iBYJsenv2WEymnWeO3eCuMrz/Eez7pHpGg==
   dependencies:
+    "@babel/runtime" "^7.10.4"
     classnames "^2.2.5"
     json2mq "^0.2.0"
     lodash "^4.17.15"
@@ -748,14 +749,14 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.1:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.4.2.tgz#0b55c0ecf1eec3ffc03c4351e787add3be2de664"
-  integrity sha512-uf/YPNsl8IQOqNQjO3tzinMvKHTgcVwJ2VCwMtNh8gCf4t9ptHccF5q0lDkg7K4K28aaB/EumuC0kooi359dNQ==
+antd@^4.4.3:
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.4.3.tgz#338f724df733f5a9debb6f63ddfef2e2360d916c"
+  integrity sha512-DA776Lfl7AOfGC+dWnA+QV4AopkrC/cDiI997S+JIBI85VaC2CiuYPYWYuTPPftpJR87UCx7p6Bgv1DvrdxNTw==
   dependencies:
     "@ant-design/css-animation" "^1.7.2"
     "@ant-design/icons" "^4.2.1"
-    "@ant-design/react-slick" "~0.26.1"
+    "@ant-design/react-slick" "~0.26.3"
     "@babel/runtime" "^7.10.4"
     array-tree-filter "^2.1.0"
     classnames "^2.2.6"
@@ -772,7 +773,7 @@ antd@^4.4.2:
     rc-drawer "~4.1.0"
     rc-dropdown "~3.1.2"
     rc-field-form "~1.5.0"
-    rc-input-number "~5.1.0"
+    rc-input-number "~5.1.1"
     rc-mentions "~1.4.0"
     rc-menu "~8.5.0"
     rc-notification "~4.4.0"
@@ -6024,10 +6025,10 @@ rc-field-form@~1.5.0:
     async-validator "^3.0.3"
     rc-util "^5.0.0"
 
-rc-input-number@~5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/rc-input-number/-/rc-input-number-5.1.0.tgz#64da7d8c24ad0c5603d32faba22fd25733d6f96a"
-  integrity sha512-jh27NecKJaqooeK54JLGICgOmITwQ6fh4EW+pEgoD/T1JPFtkBer24q/U62dFEIFP8Jy7oWhxjYMe7LrGTYkHQ==
+rc-input-number@~5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/rc-input-number/-/rc-input-number-5.1.1.tgz#0f767ce132ede2454059240dc66bf55e52d921ea"
+  integrity sha512-16ln4rfgMcAYDAdx6MSYgbgoYjLCRXGkOC4G0I8NEiCOcBshuYCTf6tFdnBOVfsq0Zw9kj1qKoIrCEoRRkbGdw==
   dependencies:
     classnames "^2.2.0"
     rc-util "^5.0.1"
