@@ -37,7 +37,7 @@
   "license": "MIT",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@types/lodash": "^4.14.157",
+    "@types/lodash": "^4.14.158",
     "@types/material-ui": "^0.21.7",
     "@types/node": "^14.0.24",
     "@types/react": "^16.9.43",
