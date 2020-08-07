@@ -68,7 +68,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup": "^2.23.0",
-    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-typescript2": "^0.27.2",
     "rxjs": "^6.6.2",
     "shx": "^0.3.2",
     "source-map-support": "^0.5.19",
