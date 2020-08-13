@@ -741,10 +741,10 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.1:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@^4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.5.3.tgz#1ea0cf501e1e71626a4a57ca5e6d9544470afc09"
-  integrity sha512-/drsnAfUjrdDrIni7zmbRk4HwtuWszj+D6WBCWKh6JO3XLvCjNMJN0ayYMykS80FPw4RaOx0tl2yKhiQODvBgA==
+antd@^4.5.4:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.5.4.tgz#1eaebcba7a0d9a2e69ad3365366026546fbf7b0f"
+  integrity sha512-ToBwPaEfRXpDwkFZwEeQc8TynqVLMRX/P4V2IA2cfS4H+w4HXi89kQik4/Gx48UphHmt6fcfwtfm8QZIn3nerA==
   dependencies:
     "@ant-design/css-animation" "^1.7.2"
     "@ant-design/icons" "^4.2.1"
@@ -783,7 +783,7 @@ antd@^4.5.3:
     rc-tabs "~11.5.0"
     rc-textarea "~0.3.0"
     rc-tooltip "~4.2.0"
-    rc-tree "~3.8.5"
+    rc-tree "~3.9.0"
     rc-tree-select "~4.1.1"
     rc-trigger "~4.4.0"
     rc-upload "~3.2.0"
@@ -6235,10 +6235,10 @@ rc-tree-select@~4.1.1:
     rc-tree "^3.8.0"
     rc-util "^5.0.5"
 
-rc-tree@^3.8.0, rc-tree@~3.8.5:
-  version "3.8.5"
-  resolved "https://registry.yarnpkg.com/rc-tree/-/rc-tree-3.8.5.tgz#1f6d8c14a4f9263d5a426f7a24703a4c7be46ea3"
-  integrity sha512-audXUWwxyGB/4rLI4v+KuVucbc74y5t10XYQlR5WUe1J0sQuxP19+5GTb6DgrGXPxWOC6mxmkiw/xsKissE0GA==
+rc-tree@^3.8.0, rc-tree@~3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/rc-tree/-/rc-tree-3.9.0.tgz#89de29a8ea5692447d01bbbda8931bd6b3e9b2e1"
+  integrity sha512-TYvIq2SKdVugS2mdOGC++CNWjj1VDBws4JZkFOAJVQfXFWg+BNW4rhuTzAs4ZY3KiE+1xG0u5cOVvIPr7qkxCA==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "2.x"
