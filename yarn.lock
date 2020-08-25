@@ -740,10 +740,10 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.1:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.6.0.tgz#48a9ebf503d65a7c0ba3020b0e94274012f49613"
-  integrity sha512-HGndis0eYZD6jIzIHGGIQ3PTBCyM9xY1EPA+W+4CL+qyuvY691MtRj8JBCBizV9P2Yr55X0CKwG8A4Epq6fm7w==
+antd@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.6.1.tgz#d204215d3d00a3ac51a2e93ec2ee1a49adbdb705"
+  integrity sha512-RsqbFvUNSZ5K114492BNo4p+4MpCUpzIsZLu0XFlufYLyIE3pyw184OZjPnJ7b4qlMEvlIoE14N8qCb4BnZF0w==
   dependencies:
     "@ant-design/colors" "^4.0.5"
     "@ant-design/css-animation" "^1.7.2"
