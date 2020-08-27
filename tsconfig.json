@@ -2,18 +2,15 @@
   "compilerOptions": {
     "target": "ES5",
     "moduleResolution": "node",
+    "module": "CommonJS",
     "importHelpers": true,
     "noEmitHelpers": true,
     "allowSyntheticDefaultImports": true,
     "checkJs": false,
     "declaration": true,
-    "jsx": "react",
     "outDir": "lib",
     "sourceMap": true,
     "skipLibCheck": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "lib": [
       "dom",
       "dom.iterable",
