@@ -790,10 +790,10 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.1:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@^4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.6.1.tgz#d204215d3d00a3ac51a2e93ec2ee1a49adbdb705"
-  integrity sha512-RsqbFvUNSZ5K114492BNo4p+4MpCUpzIsZLu0XFlufYLyIE3pyw184OZjPnJ7b4qlMEvlIoE14N8qCb4BnZF0w==
+antd@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.6.2.tgz#c3a8fda7f7c60aa3d3e8ed356bef61902ed3d1ad"
+  integrity sha512-6hmSRiSV3Lzz/1fKGOLHld7gf0d+MW7fg7MNGCAAceGmxtG1WEaaOtV8dZeL2WXq0SGH4wY4GytN6chRrtatfw==
   dependencies:
     "@ant-design/colors" "^4.0.5"
     "@ant-design/css-animation" "^1.7.2"
@@ -837,8 +837,8 @@ antd@^4.6.1:
     rc-tree "~3.9.0"
     rc-tree-select "~4.1.1"
     rc-trigger "~4.4.0"
-    rc-upload "~3.2.0"
-    rc-util "^5.0.1"
+    rc-upload "~3.2.1"
+    rc-util "^5.1.0"
     scroll-into-view-if-needed "^2.2.25"
     warning "^4.0.3"
 
@@ -6339,17 +6339,17 @@ rc-trigger@^4.0.0, rc-trigger@^4.2.1, rc-trigger@^4.3.0, rc-trigger@^4.4.0, rc-t
     rc-motion "^1.0.0"
     rc-util "^5.0.1"
 
-rc-upload@~3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/rc-upload/-/rc-upload-3.2.0.tgz#251fc3c9105902e808600a414f368f285d63bfba"
-  integrity sha512-/vyOGVxl5QVM3ZE7s+GqYPbCLC/Q/vJq0sjdwnvJw01KvAR5kVOC4jbHEaU56dMss7PFGDfNzc8zO5bWYLDzVQ==
+rc-upload@~3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/rc-upload/-/rc-upload-3.2.1.tgz#2bd6af19061be748736624f553a67d04a49c0deb"
+  integrity sha512-gmIy08tco2YFTSiru9zgeTmUcDKPyUMUUBdUIjG2CcHz4jdbpaPx/RL/Wz9CMD6ppQizK0gES0rcQ1+o5frK2Q==
   dependencies:
     classnames "^2.2.5"
 
-rc-util@^5.0.0, rc-util@^5.0.1, rc-util@^5.0.4, rc-util@^5.0.5, rc-util@^5.0.6, rc-util@^5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-5.0.7.tgz#125c3a2fd917803afbb685f9eadc789b085dc813"
-  integrity sha512-nr98b5aMqqvIqxm16nF+zC3K3f81r+HsflT5E9Encr5itRwV7Vo/5GjJMNds/WiFV33rilq7vzb3xeAbCycmwg==
+rc-util@^5.0.0, rc-util@^5.0.1, rc-util@^5.0.4, rc-util@^5.0.5, rc-util@^5.0.6, rc-util@^5.0.7, rc-util@^5.1.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-5.2.0.tgz#c3fb107631c2cc9dbe3822128ba76819b3f84948"
+  integrity sha512-IkANK8S+PGKyFKt1uxxL0jnUu5cQeMqx2SiH+eClxM9jUrOg2jnBR4nNe2r/ccoiSlfMigE6USCgaTnWsdzsCQ==
   dependencies:
     react-is "^16.12.0"
     shallowequal "^1.1.0"
