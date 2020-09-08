@@ -70,7 +70,7 @@
     "react-dom": "^16.13.1",
     "rollup": "^2.26.10",
     "rollup-plugin-typescript2": "^0.27.2",
-    "rxjs": "^6.6.2",
+    "rxjs": "^6.6.3",
     "shx": "^0.3.2",
     "source-map-support": "^0.5.19",
     "style-loader": "^1.2.1",
