@@ -344,10 +344,10 @@
     "@swc-node/core-linux" "^0.7.6"
     "@swc-node/core-win32" "^0.7.6"
 
-"@swc-node/register@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@swc-node/register/-/register-0.5.0.tgz#eecdcc429b0abb8303dc131710bd758b6ee05bb6"
-  integrity sha512-iPAmbZHwDy3sVHGTN8JmiGREMw/BpQ9GIG+tXc41PxWDHD4M2uaCGHksTLep7WJdNrQyVFtTVlTHt8kvsKEEZQ==
+"@swc-node/register@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@swc-node/register/-/register-0.5.1.tgz#f52e1d8a6e54bfbfd7bef9273906795f1e6262f3"
+  integrity sha512-HQSH3dDrEptDVLtd3Z/K21ympH8oCg0Z2AaWTBkufH23LYFh+skLnuBY6dNfOJ6VQH2qAkFA/qF5DujFnwz4lg==
   dependencies:
     "@swc-node/core" "^0.7.6"
     "@swc-node/sourcemap-support" "^0.1.8"
