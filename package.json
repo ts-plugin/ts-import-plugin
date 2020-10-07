@@ -82,7 +82,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "tslib": "^2.0.1"
+    "tslib": "^2.0.2"
   },
   "ava": {
     "extensions": [
