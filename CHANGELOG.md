@@ -1,3 +1,7 @@
+# 1.6.7
+**[Chore]** Upgrade deps, add `funding` field in package.json
+**[Chore]** Update example to webpack@5
+
 # 1.6.6
 **[Chore]** Add license file
 

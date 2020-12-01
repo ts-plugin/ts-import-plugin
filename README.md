@@ -10,7 +10,7 @@ webpack template `./webpack.config.js`, run: `npm start` to see the bundle analy
 
 > This plugin is not work if your are using `import * as _ from 'lodash'` or `import _ from 'lodash'`
 
-![bundle-analyzer](./bundle.jpg)
+![bundle-analyzer](./bundle.png)
 
 # Why use this
 

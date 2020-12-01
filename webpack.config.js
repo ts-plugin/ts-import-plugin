@@ -10,7 +10,7 @@ const tsImportPlugin = tsImportPluginFactory({ style: 'css', libraryDirectory: '
 module.exports = {
   entry: './test/fixtures/index.tsx',
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
     path: resolve(process.cwd(), 'dist'),
   },
   resolve: {
@@ -29,6 +29,7 @@ module.exports = {
             module: 'esnext',
             allowJs: true,
             declaration: false,
+            jsx: 'react-jsx',
           },
         },
         exclude: /node_modules/,
@@ -41,7 +42,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [cssnano()],
+              postcssOptions: {
+                plugins: [cssnano()],
+              },
             },
           },
         ],
@@ -54,25 +57,52 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all',
+      cacheGroups: {
+        antd: {
+          name: `npm-antd`,
+          test: testPackageName(/[\\/]node_modules[\\/](antd|@ant-design|rc-[^\\/]+)[\\/]/),
+          priority: 200,
+          enforce: true,
+        },
+        react: {
+          name: `npm-react`,
+          test: testPackageName(/[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/),
+          priority: 200,
+          enforce: true,
+        },
+        vendor: {
+          name: 'vendor',
+          test: /[\\/]node_modules[\\/]/,
+          priority: 190,
+          enforce: true,
+        },
+        styles: {
+          name: 'styles',
+          test: (module) =>
+            module.nameForCondition && /\.css$/.test(module.nameForCondition()) && !/^javascript/.test(module.type),
+          chunks: 'all',
+          minSize: 1,
+          minChunks: 1,
+          reuseExistingChunk: true,
+          priority: 1000,
+          enforce: true,
+        },
+      },
     },
   },
 
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-
-    new webpack.optimize.ModuleConcatenationPlugin(),
-
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
+      filename: '[name].[contenthash].css',
     }),
-
-    new webpack.HashedModuleIdsPlugin(),
 
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       reportFilename: './report.html',
     }),
   ],
+}
+
+function testPackageName(regexp) {
+  return (module) => module.nameForCondition && regexp.test(module.nameForCondition())
 }

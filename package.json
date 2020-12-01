@@ -44,7 +44,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/parser": "^4.9.0",
-    "antd": "^4.9.0",
+    "antd": "^4.9.1",
     "ava": "^3.13.0",
     "codecov": "^3.8.1",
     "css-loader": "^5.0.1",
@@ -64,10 +64,10 @@
     "material-ui": "^0.20.2",
     "mini-css-extract-plugin": "^1.3.1",
     "nyc": "^15.1.0",
-    "postcss-loader": "^3.0.0",
+    "postcss-loader": "^4.1.0",
     "prettier": "^2.2.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "rollup": "^2.34.0",
     "rollup-plugin-typescript2": "^0.29.0",
     "rxjs": "^6.6.3",
@@ -121,8 +121,8 @@
     ],
     "check-coverage": true
   },
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/ts-import-plugin"
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Brooooooklyn"
   }
 }
