@@ -40,7 +40,7 @@
     "@swc-node/register": "^1.0.2",
     "@types/lodash": "^4.14.165",
     "@types/material-ui": "^0.21.8",
-    "@types/node": "^14.14.11",
+    "@types/node": "^14.14.12",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/parser": "^4.9.1",
