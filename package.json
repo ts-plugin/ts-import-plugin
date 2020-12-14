@@ -44,7 +44,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/parser": "^4.9.1",
-    "antd": "^4.9.2",
+    "antd": "^4.9.3",
     "ava": "^3.14.0",
     "codecov": "^3.8.1",
     "css-loader": "^5.0.1",
