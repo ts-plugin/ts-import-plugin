@@ -49,7 +49,7 @@
     "codecov": "^3.8.1",
     "css-loader": "^5.0.1",
     "cssnano": "^4.1.10",
-    "eslint": "^7.17.0",
+    "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
