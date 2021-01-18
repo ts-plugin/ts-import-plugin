@@ -813,10 +813,10 @@ ansi-styles@^5.0.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.0.0.tgz#675dbbb5ca1908fa90abe4e5b1c2e9b1f4080d99"
   integrity sha512-6564t0m0fuQMnockqBv7wJxo9T5C2V9JpYXyNScfRDPVLusOQQhkpMGrFC17QbiolraQ1sMXX+Y5nJpjqozL4g==
 
-antd@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.10.2.tgz#d285f8b282576902358a3937a6e40e09b72d4291"
-  integrity sha512-aWEP5DnYV3ytWhVQuoTc9qlkbPkVaSX8IY7u1yycQayD2gEvdnhJEs4JPdH1VNAMI4FO3M+iTPsIS6uZPch0sA==
+antd@^4.10.3:
+  version "4.10.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.10.3.tgz#54da18519470f6c68c348d29e646836321f8ddc0"
+  integrity sha512-J/IZvW15MwTmUxK/AWFkSU51T1Hyn4e0GchJWlIe7+FrPpLoTgLf9/Cx3mgxiooHfE9OfvnYvvRli1VxHH6H0Q==
   dependencies:
     "@ant-design/colors" "^5.0.0"
     "@ant-design/icons" "^4.3.0"
@@ -827,7 +827,6 @@ antd@^4.10.2:
     copy-to-clipboard "^3.2.0"
     lodash "^4.17.20"
     moment "^2.25.3"
-    omit.js "^2.0.2"
     rc-cascader "~1.4.0"
     rc-checkbox "~2.3.0"
     rc-collapse "~3.1.0"
@@ -857,7 +856,7 @@ antd@^4.10.2:
     rc-tree "~4.1.0"
     rc-tree-select "~4.3.0"
     rc-upload "~3.3.4"
-    rc-util "^5.6.6"
+    rc-util "^5.7.0"
     scroll-into-view-if-needed "^2.2.25"
     warning "^4.0.3"
 
@@ -3878,7 +3877,7 @@ object.values@^1.1.0, object.values@^1.1.1:
     es-abstract "^1.18.0-next.1"
     has "^1.0.3"
 
-omit.js@^2.0.0, omit.js@^2.0.2:
+omit.js@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npmjs.org/omit.js/-/omit.js-2.0.2.tgz#dd9b8436fab947a5f3ff214cb2538631e313ec2f"
   integrity sha512-hJmu9D+bNB40YpL9jYebQl4lsTW6yEHRTroJzNLqQJYHm7c+NQnJGfZmIWh8S3q3KoaxV1aLhV6B3+0N0/kyJg==
@@ -4963,10 +4962,10 @@ rc-upload@~3.3.4:
     classnames "^2.2.5"
     rc-util "^5.2.0"
 
-rc-util@^5.0.0, rc-util@^5.0.1, rc-util@^5.0.5, rc-util@^5.0.6, rc-util@^5.0.7, rc-util@^5.2.0, rc-util@^5.2.1, rc-util@^5.3.0, rc-util@^5.4.0, rc-util@^5.5.0, rc-util@^5.5.1, rc-util@^5.6.1, rc-util@^5.6.2, rc-util@^5.6.6:
-  version "5.6.6"
-  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-5.6.6.tgz#62632a8ab31dcc474d28eff9aa5c3ff2405e1146"
-  integrity sha512-GLAqlODTuVu4V5dZpcDhM7i1pM0BCck2i5u1tW7PO0ZlmX385BhCJOWKqpJXvv4oh3rR5iC2zsJgb1B8hU5FJw==
+rc-util@^5.0.0, rc-util@^5.0.1, rc-util@^5.0.5, rc-util@^5.0.6, rc-util@^5.0.7, rc-util@^5.2.0, rc-util@^5.2.1, rc-util@^5.3.0, rc-util@^5.4.0, rc-util@^5.5.0, rc-util@^5.5.1, rc-util@^5.6.1, rc-util@^5.6.2, rc-util@^5.7.0:
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-5.7.0.tgz#776b14cf5bbfc24f419fd40c42ffadddda0718fc"
+  integrity sha512-0hh5XkJ+vBDeMJsHElqT1ijMx+gC3gpClwQ10h/5hccrrgrMx8VUem183KLlH1YrWCfMMPmDXWWNnwsn+p6URw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     react-is "^16.12.0"
