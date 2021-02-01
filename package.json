@@ -43,7 +43,7 @@
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@typescript-eslint/parser": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.2",
     "antd": "^4.11.2",
     "ava": "^3.15.0",
     "codecov": "^3.8.1",
