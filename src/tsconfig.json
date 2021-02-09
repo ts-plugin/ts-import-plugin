@@ -9,6 +9,7 @@
     "noUnusedParameters": true
   },
   "files": [
-    "./index.ts"
+    "./index.ts",
+    "./bin.ts"
   ]
 }
