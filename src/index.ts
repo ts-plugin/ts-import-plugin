@@ -10,6 +10,7 @@ export interface Options {
   camel2UnderlineComponentName?: boolean
   transformToDefaultImport?: boolean
   resolveContext?: string[]
+  failIfNotFound?: boolean;
 }
 
 export interface ImportedStruct {
@@ -111,6 +112,10 @@ function createDistAst(struct: ImportedStruct, options: Options) {
     })
   } catch (e) {
     canResolveImportPath = false
+    if (options.failIfNotFound) {
+      throw new Error(`Can not find component for library: ${options.libraryName} in ${importPath}`)
+    }
+
     astNodes.push(
       ts.createImportDeclaration(
         undefined,
@@ -168,14 +173,16 @@ function createDistAst(struct: ImportedStruct, options: Options) {
   return astNodes
 }
 
-const defaultOptions = {
+const defaultOptions: Required<Options> = {
   libraryName: 'antd',
   libraryDirectory: 'lib',
   style: false,
   camel2DashComponentName: true,
+  camel2UnderlineComponentName: false,
   transformToDefaultImport: true,
   resolveContext: [],
   libraryOverride: false,
+  failIfNotFound: false,
 }
 
 export function createTransformer(_options: Partial<Options> | Array<Partial<Options>> = {}) {

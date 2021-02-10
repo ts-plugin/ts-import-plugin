@@ -5,6 +5,7 @@ import * as ts from 'typescript'
 
 import { createSpec } from './utils'
 import { Options, createTransformer } from '../src'
+import * as fs from "fs"
 
 const suites: { title: string, config: Options | Options[] }[] = [
   {
@@ -133,5 +134,23 @@ test('should throw if custom style resolver thrown', (t) => {
   })
 
   const transpile = () => ts.transform(source, [transformer])
-  t.throws(transpile, null, error.message)
+  t.throws(transpile, {
+    message: error.message
+  })
+})
+
+test('should throw if Component path is not found and failIfNotFound is true', (t) => {
+  const sourceCode = fs.readFileSync(resolve(__dirname, 'fixtures', 'component-not-found', 'index.ts'), 'utf-8')
+
+  const source = ts.createSourceFile('index.tsx', sourceCode, ts.ScriptTarget.ESNext, true)
+
+  const transformer = createTransformer({
+    libraryName: 'react',
+    failIfNotFound: true
+  })
+
+  const transpile = () => ts.transform(source, [transformer])
+  t.throws(transpile, {
+    message: 'Can not find component for library: react in react/lib/component'
+  });
 })
