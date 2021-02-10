@@ -8,10 +8,16 @@ import transformerFactory, { Options } from '../src'
 export function createSpec(title: string, config: Options | Options[]) {
   const printer = ts.createPrinter()
 
-  const fixtureDir = fs.readdirSync(resolve(__dirname, 'fixtures'))
+  const fixtureDir = fs.readdirSync(resolve(__dirname, 'fixtures'), {
+    withFileTypes: true
+  })
 
   const transformer = transformerFactory(config)
-  fixtureDir.forEach(v => {
+  fixtureDir.forEach(vDirEnt => {
+    if (!vDirEnt.isFile()) {
+      return;
+    }
+    const v = vDirEnt.name;
     test(`${title} ${v}`, (t) => {
       const sourceCode = fs.readFileSync(resolve(__dirname, 'fixtures', v), 'utf-8')
 

@@ -103,7 +103,7 @@ module.exports = {
 
 ## With rollup
 ```js
-import typescript from 'rollup-plugin-typescript2'
+import typescript from 'rollup-plugin-typescript2' // or '@rollup/plugin-typescript'
 import createTransformer from 'ts-import-plugin'
 
 const transformer = createTransformer({
@@ -133,22 +133,32 @@ export default {
 
 `options` can be an object:
 
-- libraryName `string`
+- libraryName `string` - The name of the library in the import. e.g. If using `import { foo } from 'Bar'` 
+the library should be set to 'bar'.
 
   default `'antd'`
 - style `boolean | string | ((path: string) => string)`
 
   default `false`
-- libraryDirectory `string | ((name: string) => string)`
+- libraryDirectory `string | ((name: string) => string)` - The directory within the library to replace the import with.
+e.g. If you have `import { foo } from 'Bar'`, it will be replaced to `import foo from `\`Bar/${libraryDirectory}/foo\``
 
   default `'lib'`
-- camel2DashComponentName `boolean`
+- camel2DashComponentName `boolean` - Builtin method to use to transform the component name. This does transform the
+component name from camelCase to dashed. e.g. `FooBar` gets transformed to `foo-bar`
 
   default `true`
-- camel2UnderlineComponentName `boolean`
+- camel2UnderlineComponentName `boolean` - Builtin method to use to transform the component name. This does transform the
+ component name from camelCase to snake_case. e.g. `FooBar` gets transformed to `foo_bar`
 
   default `false`
-- libraryOverride `boolean`
+- libraryOverride `boolean` - Setting to false (default) prepends the `libraryName` to the `libraryDirectory` (with a path separator)
+ set to true if you want to use the `libraryDirectory` as the full path for the import.
+
+  default `false`
+  
+- failIfNotFound `boolean` - If the component is not found in the library, the full library is imported by default. 
+ set to true to fail the build.
 
   default `false`
 
