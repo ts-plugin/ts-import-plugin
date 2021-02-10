@@ -10,7 +10,7 @@ export interface Options {
   camel2UnderlineComponentName?: boolean
   transformToDefaultImport?: boolean
   resolveContext?: string[]
-  failIfNotFound?: boolean;
+  failIfNotFound?: boolean
 }
 
 export interface ImportedStruct {
