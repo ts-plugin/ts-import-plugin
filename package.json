@@ -42,7 +42,7 @@
     "@types/material-ui": "^0.21.8",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
-    "@types/react-dom": "^17.0.0",
+    "@types/react-dom": "^17.0.1",
     "@typescript-eslint/parser": "^4.15.0",
     "antd": "^4.12.2",
     "ava": "^3.15.0",
