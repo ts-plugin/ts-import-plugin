@@ -2,24 +2,24 @@
 # yarn lockfile v1
 
 
-"@ant-design/colors@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.npmjs.org/@ant-design/colors/-/colors-5.0.1.tgz#09670f2f44a7473d7bc01be901c48ec10f12c7a4"
-  integrity sha512-x1TUaRILaqy3zgFNo+kIqOa3eTYPt81H1/3E4dCjDP4Qvk/xaPEizLDFdRUcIx0cWwyu2LklwfyLHWpbYK8v6A==
+"@ant-design/colors@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@ant-design/colors/-/colors-6.0.0.tgz#9b9366257cffcc47db42b9d0203bb592c13c0298"
+  integrity sha512-qAZRvPzfdWHtfameEGP2Qvuf838NhergR35o+EuVyB5XvSA98xod5r4utvi4TJ3ywmevm290g9nsCG5MryrdWQ==
   dependencies:
-    "@ctrl/tinycolor" "^3.3.1"
+    "@ctrl/tinycolor" "^3.4.0"
 
 "@ant-design/icons-svg@^4.0.0":
   version "4.1.0"
   resolved "https://registry.npmjs.org/@ant-design/icons-svg/-/icons-svg-4.1.0.tgz#480b025f4b20ef7fe8f47d4a4846e4fee84ea06c"
   integrity sha512-Fi03PfuUqRs76aI3UWYpP864lkrfPo0hluwGqh7NJdLhvH4iRDc3jbJqZIvRDLHKbXrvAfPPV3+zjUccfFvWOQ==
 
-"@ant-design/icons@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.npmjs.org/@ant-design/icons/-/icons-4.4.0.tgz#d4e4ba5910454e1d3f67a802d2aad9ee75a51dea"
-  integrity sha512-+X44IouK56JbP3r7zM+Zoykv5wQlXBlxY0NTaFXGpiyYSS/Bh6HIo9aTF62QkSuDTqA3UpeNVTRFioKKRmkWDQ==
+"@ant-design/icons@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@ant-design/icons/-/icons-4.5.0.tgz#dc5ceff85503932265143dc5c3013167daa3f754"
+  integrity sha512-ZAKJcmr4DBV3NWr8wm2dCxNKN4eFrX+qCaPsuFejP6FRsf+m5OKxvCVi9bSp1lmKWeOI5yECAx5s0uFm4QHuPw==
   dependencies:
-    "@ant-design/colors" "^5.0.0"
+    "@ant-design/colors" "^6.0.0"
     "@ant-design/icons-svg" "^4.0.0"
     "@babel/runtime" "^7.11.2"
     classnames "^2.2.6"
@@ -232,10 +232,10 @@
   dependencies:
     arrify "^1.0.1"
 
-"@ctrl/tinycolor@^3.3.1":
-  version "3.3.4"
-  resolved "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-3.3.4.tgz#59691edd031eedc431bda1bdf601257c06289a40"
-  integrity sha512-8vmPV/nIULFDWsnJalQJDqFLC2uTPx6A/ASA2t27QGp+7oXnbWWXCe0uV8xasIH2rGbI/XoB2vmkdP/94WvMrw==
+"@ctrl/tinycolor@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
+  integrity sha512-JZButFdZ1+/xAfpguQHoabIXkcqRRKpMrWKBkpEZZyxfY9C1DpADFB8PEqGSTeFr135SaTRfKqGKx5xSCLI7ZQ==
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.2"
@@ -839,13 +839,13 @@ ansi-styles@^5.0.0:
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.1.0.tgz#a436bcc51d81f4fab5080b2ba94242e377c41573"
   integrity sha512-osxifZo3ar56+e8tdYreU6p8FZGciBHo5O0JoDAxMUqZuyNUb+yHEwYtJZ+Z32R459jEgtwVf1u8D7qYwU0l6w==
 
-antd@^4.12.2:
-  version "4.12.2"
-  resolved "https://registry.npmjs.org/antd/-/antd-4.12.2.tgz#3e00b21de418c94a358bf1fc064de15654a30161"
-  integrity sha512-xB7sGg2qM/Sl3azjbc2RbJQ6cTr2Fos0AYZw2gTLLWtKhOyO3FUH7EBsL17GOkVnEDwMmBYtVXLhMgPM+e4gbA==
+antd@^4.12.3:
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.12.3.tgz#b9f1401e4f2899a3b33c1953491775efbbaa4da3"
+  integrity sha512-opzbxm6jZB+Pc9M0Kuo6+4WmniB59NJ4i/qBr6ExyMtl9hMgsGNH8GuDXsp2xgTzfq5hyobdLci2DAuPMrf0Zg==
   dependencies:
-    "@ant-design/colors" "^5.0.0"
-    "@ant-design/icons" "^4.4.0"
+    "@ant-design/colors" "^6.0.0"
+    "@ant-design/icons" "^4.5.0"
     "@ant-design/react-slick" "~0.28.1"
     "@babel/runtime" "^7.12.5"
     array-tree-filter "^2.1.0"
