@@ -59,13 +59,13 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.6.0",
-    "husky": "5",
+    "husky": "6",
     "json-schema": "^0.3.0",
     "lint-staged": "^10.5.4",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "material-ui": "^0.20.2",
-    "mini-css-extract-plugin": "^1.4.1",
+    "mini-css-extract-plugin": "^1.5.0",
     "nyc": "^15.1.0",
     "pinst": "^2.1.6",
     "postcss-loader": "^5.2.0",
@@ -78,7 +78,7 @@
     "shx": "^0.3.3",
     "source-map-support": "^0.5.19",
     "style-loader": "^2.0.0",
-    "ts-loader": "^8.1.0",
+    "ts-loader": "^9.0.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3",
     "webpack": "^5.31.2",
@@ -86,7 +86,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "tslib": "^2.1.0"
+    "tslib": "^2.2.0"
   },
   "ava": {
     "extensions": [
