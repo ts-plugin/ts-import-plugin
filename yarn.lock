@@ -14,9 +14,9 @@
   resolved "https://registry.npmjs.org/@ant-design/icons-svg/-/icons-svg-4.1.0.tgz#480b025f4b20ef7fe8f47d4a4846e4fee84ea06c"
   integrity sha512-Fi03PfuUqRs76aI3UWYpP864lkrfPo0hluwGqh7NJdLhvH4iRDc3jbJqZIvRDLHKbXrvAfPPV3+zjUccfFvWOQ==
 
-"@ant-design/icons@^4.5.0":
+"@ant-design/icons@^4.6.2":
   version "4.6.2"
-  resolved "https://registry.npmjs.org/@ant-design/icons/-/icons-4.6.2.tgz#290f2e8cde505ab081fda63e511e82d3c48be982"
+  resolved "https://registry.yarnpkg.com/@ant-design/icons/-/icons-4.6.2.tgz#290f2e8cde505ab081fda63e511e82d3c48be982"
   integrity sha512-QsBG2BxBYU/rxr2eb8b2cZ4rPKAPBpzAR+0v6rrZLp/lnyvflLH3tw1vregK+M7aJauGWjIGNdFmUfpAOtw25A==
   dependencies:
     "@ant-design/colors" "^6.0.0"
@@ -858,19 +858,19 @@ ansi-styles@^5.0.0:
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.1.0.tgz#a436bcc51d81f4fab5080b2ba94242e377c41573"
   integrity sha512-osxifZo3ar56+e8tdYreU6p8FZGciBHo5O0JoDAxMUqZuyNUb+yHEwYtJZ+Z32R459jEgtwVf1u8D7qYwU0l6w==
 
-antd@^4.14.0:
-  version "4.14.0"
-  resolved "https://registry.npmjs.org/antd/-/antd-4.14.0.tgz#954c4554b33e764215dd09d378f61b81f5682558"
-  integrity sha512-K0VG6Ion4gGX8Lo8mJVfNDD8JrHjTq/qlBkicmpZGQXOOAWi19EElH2RpKGN1+WD4OXekWo6dZkSDmK2Lzxe5Q==
+antd@^4.15.2:
+  version "4.15.2"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.15.2.tgz#f955bcbdd1f577c7ac93a00ad17d1719d1b90818"
+  integrity sha512-9IwlR022xSQrG+iJG8d7adSo9gy4n7AuS5x0/OxDi/V3CYSTTfaE24jp1wnmgmXOVAT/77Llg9OEbKcSyFim2g==
   dependencies:
     "@ant-design/colors" "^6.0.0"
-    "@ant-design/icons" "^4.5.0"
+    "@ant-design/icons" "^4.6.2"
     "@ant-design/react-slick" "~0.28.1"
     "@babel/runtime" "^7.12.5"
     array-tree-filter "^2.1.0"
     classnames "^2.2.6"
     copy-to-clipboard "^3.2.0"
-    lodash "^4.17.20"
+    lodash "^4.17.21"
     moment "^2.25.3"
     rc-cascader "~1.4.0"
     rc-checkbox "~2.3.0"
@@ -879,7 +879,7 @@ antd@^4.14.0:
     rc-drawer "~4.3.0"
     rc-dropdown "~3.2.0"
     rc-field-form "~1.20.0"
-    rc-image "~5.2.3"
+    rc-image "~5.2.4"
     rc-input-number "~7.0.1"
     rc-mentions "~1.5.0"
     rc-menu "~8.10.0"
@@ -902,7 +902,7 @@ antd@^4.14.0:
     rc-tree-select "~4.3.0"
     rc-trigger "^5.2.1"
     rc-upload "~4.2.0-alpha.0"
-    rc-util "^5.8.1"
+    rc-util "^5.9.4"
     scroll-into-view-if-needed "^2.2.25"
     warning "^4.0.3"
 
@@ -4740,9 +4740,9 @@ rc-field-form@~1.20.0:
     async-validator "^3.0.3"
     rc-util "^5.8.0"
 
-rc-image@~5.2.3:
+rc-image@~5.2.4:
   version "5.2.4"
-  resolved "https://registry.npmjs.org/rc-image/-/rc-image-5.2.4.tgz#ff1059f937bde6ca918c6f1beb316beba911f255"
+  resolved "https://registry.yarnpkg.com/rc-image/-/rc-image-5.2.4.tgz#ff1059f937bde6ca918c6f1beb316beba911f255"
   integrity sha512-kWOjhZC1OoGKfvWqtDoO9r8WUNswBwnjcstI6rf7HMudz0usmbGvewcWqsOhyaBRJL9+I4eeG+xiAoxV1xi75Q==
   dependencies:
     "@babel/runtime" "^7.11.2"
@@ -4987,7 +4987,7 @@ rc-upload@~4.2.0-alpha.0:
     classnames "^2.2.5"
     rc-util "^5.2.0"
 
-rc-util@^5.0.0, rc-util@^5.0.1, rc-util@^5.0.5, rc-util@^5.0.6, rc-util@^5.0.7, rc-util@^5.2.0, rc-util@^5.2.1, rc-util@^5.3.0, rc-util@^5.4.0, rc-util@^5.5.0, rc-util@^5.5.1, rc-util@^5.6.1, rc-util@^5.7.0, rc-util@^5.8.0, rc-util@^5.8.1, rc-util@^5.9.4:
+rc-util@^5.0.0, rc-util@^5.0.1, rc-util@^5.0.5, rc-util@^5.0.6, rc-util@^5.0.7, rc-util@^5.2.0, rc-util@^5.2.1, rc-util@^5.3.0, rc-util@^5.4.0, rc-util@^5.5.0, rc-util@^5.5.1, rc-util@^5.6.1, rc-util@^5.7.0, rc-util@^5.8.0, rc-util@^5.9.4:
   version "5.9.4"
   resolved "https://registry.npmjs.org/rc-util/-/rc-util-5.9.4.tgz#f3a5240df47299fff7ef45864a4abeaf4c60ff98"
   integrity sha512-pzFmYZsKLJ1p+Uv4NqA4aNBaFh8/hOQxOOxA5G4TiyPboa0o/PjminxUCKvoSwVJVW5YgleSM2XPCTpTV6DCsQ==
