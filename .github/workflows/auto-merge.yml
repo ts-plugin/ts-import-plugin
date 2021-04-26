@@ -1,9 +1,12 @@
 name: Dependabot auto merge
 
 on:
-  check_suite:
+  workflow_run:
     types:
       - completed
+    workflows:
+      # List all required workflow names here.
+      - 'CI'
 
 jobs:
   merge:
