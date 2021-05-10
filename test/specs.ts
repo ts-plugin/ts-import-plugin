@@ -5,7 +5,6 @@ import * as ts from 'typescript'
 
 import { createSpec } from './utils'
 import { Options, createTransformer } from '../src'
-import * as fs from "fs"
 
 const suites: { title: string, config: Options | Options[] }[] = [
   {
@@ -51,16 +50,6 @@ const suites: { title: string, config: Options | Options[] }[] = [
   {
     title: 'should be able to compile with camel2UnderlineComponentName config',
     config: { style: false, camel2UnderlineComponentName: true },
-  },
-  {
-    title: 'should be able to compile with transformToDefaultImport config',
-    config: {
-      libraryDirectory: '../_esm2015/internal/operators',
-      libraryName: 'rxjs/operators',
-      style: false,
-      camel2DashComponentName: false,
-      transformToDefaultImport: false
-    }
   },
   {
     title: 'should be able to compile with custom libraryDirectory resolver config',
