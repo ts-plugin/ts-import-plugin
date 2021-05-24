@@ -43,7 +43,7 @@
     "@swc-node/register": "^1.2.1",
     "@types/lodash": "^4.14.170",
     "@types/material-ui": "^0.21.8",
-    "@types/node": "^15.3.0",
+    "@types/node": "^15.6.0",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.5",
     "@typescript-eslint/parser": "^4.23.0",
