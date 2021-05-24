@@ -873,10 +873,10 @@ ansi-styles@^5.0.0:
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.1.0.tgz#a436bcc51d81f4fab5080b2ba94242e377c41573"
   integrity sha512-osxifZo3ar56+e8tdYreU6p8FZGciBHo5O0JoDAxMUqZuyNUb+yHEwYtJZ+Z32R459jEgtwVf1u8D7qYwU0l6w==
 
-antd@^4.15.5:
-  version "4.15.5"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.15.5.tgz#c54bf3a8a7e537c57395165b47c6caa4f9ea4860"
-  integrity sha512-zpdwZmdxZfSCVq6t329jXzq4oHZDDrMsD3L/bNilBJz9Y8yJZ0b4wGrWK7TSRipP2KcUB5Udm+bmfv2RBuzzNA==
+antd@^4.15.6:
+  version "4.15.6"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.15.6.tgz#bc4359b8f232c8bbb073d7236446edc9aa658d38"
+  integrity sha512-uXn1uRFlPLrAmjfkyxKc3avMVO5N30o3YoSMSJPRw5OLNjOfWsnZDPKvZwinn+QQE9N7dRXylcMfNvl11LH2gA==
   dependencies:
     "@ant-design/colors" "^6.0.0"
     "@ant-design/icons" "^4.6.2"
@@ -916,7 +916,7 @@ antd@^4.15.5:
     rc-tree "~4.1.0"
     rc-tree-select "~4.3.0"
     rc-trigger "^5.2.1"
-    rc-upload "~4.2.0-alpha.0"
+    rc-upload "~4.3.0"
     rc-util "^5.9.4"
     scroll-into-view-if-needed "^2.2.25"
     warning "^4.0.3"
@@ -4920,10 +4920,10 @@ rc-trigger@^5.0.0, rc-trigger@^5.0.4, rc-trigger@^5.1.2, rc-trigger@^5.2.1:
     rc-motion "^2.0.0"
     rc-util "^5.5.0"
 
-rc-upload@~4.2.0-alpha.0:
-  version "4.2.0-alpha.0"
-  resolved "https://registry.npmjs.org/rc-upload/-/rc-upload-4.2.0-alpha.0.tgz#326e1672851c73f01c0e2212748742d82641fa62"
-  integrity sha512-44mVeg9+FwcHVLheYovApS/Q676/dHglRbb9vEYcgqGoR0poP0ssYZ9mtmKxdgr2g5EJe7nGFljbfnyEmluCqQ==
+rc-upload@~4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/rc-upload/-/rc-upload-4.3.0.tgz#2fbbd11242f730802b900c09b469f28437bac0ff"
+  integrity sha512-wDXf1ZdUTwBIfagTof1MJDjOHZ6xluD0xcgojYZeAZSi+3Doyc21jNV8bRIeK5jx/OQmllrpQp1/MWKkqvkBhg==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "^2.2.5"
