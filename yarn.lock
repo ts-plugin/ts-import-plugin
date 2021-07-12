@@ -2239,10 +2239,10 @@ eslint-plugin-react@^7.24.0:
     resolve "^2.0.0-next.3"
     string.prototype.matchall "^4.0.5"
 
-eslint-plugin-sonarjs@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.9.0.tgz#4e97f84d89db465e57c6e7afa3f9e34eef16838d"
-  integrity sha512-zXbYcjJmv72qJlIJ4Wig/4RHkH5047ZjoD4kjKmjLi6Hs91RP8HjGKV+n/Ob1Cg85pDJcA952ftXtxVXrX4IkA==
+eslint-plugin-sonarjs@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.9.1.tgz#a3c63ab0d267bfb69863159e42c8081b01fd3ac6"
+  integrity sha512-KKFofk1LPjGHWeAZijYWv32c/C4mz+OAeBNVxhxHu1hknrTOhu415MWC8qKdAdsmOlBPShs9evM4mI1o7MNMhw==
 
 eslint-scope@5.1.1, eslint-scope@^5.1.1:
   version "5.1.1"
