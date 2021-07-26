@@ -61,7 +61,7 @@
     "eslint-plugin-sonarjs": "^0.9.1",
     "husky": "7",
     "json-schema": "^0.3.0",
-    "lint-staged": "^11.0.1",
+    "lint-staged": "^11.1.1",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "material-ui": "^0.20.2",
