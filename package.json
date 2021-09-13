@@ -76,7 +76,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "rxjs": "^7.3.0",
     "shx": "^0.3.3",
-    "source-map-support": "^0.5.19",
+    "source-map-support": "^0.5.20",
     "style-loader": "^3.2.1",
     "ts-loader": "^9.2.5",
     "ts-node": "^10.2.1",
