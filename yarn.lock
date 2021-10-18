@@ -551,10 +551,10 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.175.tgz#b78dfa959192b01fae0ad90e166478769b215f45"
   integrity sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==
 
-"@types/material-ui@^0.21.9":
-  version "0.21.9"
-  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.21.9.tgz#156a7e78274b8d0c55e19a6b5483b105aa53c0f3"
-  integrity sha512-YhZzW7rRqT2VpNTDYdXAB4Qgy1oBK2YDL1QSeL8t2ALmFTv141a5KW1buTobkc840QN+GGvon/u814jOxsvZLw==
+"@types/material-ui@^0.21.10":
+  version "0.21.10"
+  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.21.10.tgz#7a793256b4c49c38ad9745b4d6ac6f6c6314e15f"
+  integrity sha512-IC5HJA5u/+oyBqdSFB0H9+3Bgq5YuJFudsYwfkPxHStg3cPW+cIk9fqIJpFJTBmaHEkxx3ShvsttkQGgZn8AjA==
   dependencies:
     "@types/react" "*"
     "@types/react-addons-linked-state-mixin" "*"
