@@ -50,7 +50,7 @@
     "antd": "^4.16.13",
     "ava": "^3.15.0",
     "codecov": "^3.8.3",
-    "css-loader": "^6.4.0",
+    "css-loader": "^6.5.0",
     "cssnano": "^4.1.11",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
