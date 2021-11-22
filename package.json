@@ -65,7 +65,7 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "material-ui": "^0.20.2",
-    "mini-css-extract-plugin": "^2.4.4",
+    "mini-css-extract-plugin": "^2.4.5",
     "nyc": "^15.1.0",
     "pinst": "^2.1.6",
     "postcss-loader": "^6.2.0",
