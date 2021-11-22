@@ -41,7 +41,7 @@
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@swc-node/register": "^1.4.0",
-    "@types/lodash": "^4.14.176",
+    "@types/lodash": "^4.14.177",
     "@types/material-ui": "^0.21.12",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
