@@ -11,7 +11,7 @@
     "build:cjs": "shx rm -rf lib && tsc -p src/tsconfig.json",
     "build:esm": "tsc -p src/tsconfig.json -m esnext --outDir esm -d false",
     "build:next": "tsc -p src/tsconfig.json -m esnext --target ES2018 --outDir next -d false",
-    "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test ava && nyc report",
+    "cover": "rm -rf ./coverage && c8 --reporter=lcov --exclude=node_modules --exclude=test ava && c8 report",
     "lint": "eslint . -c ./.eslintrc.yml 'src/**/*.{ts,tsx}' './*.js'",
     "start": "rm -rf dist && NODE_ENV=production webpack",
     "test": "ava",
@@ -39,20 +39,20 @@
   "author": "lynweklm@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@swc-node/register": "^1.4.0",
     "@types/lodash": "^4.14.177",
     "@types/material-ui": "^0.21.12",
-    "@types/node": "^16.11.9",
+    "@types/node": "^16.11.10",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/parser": "^5.4.0",
-    "antd": "^4.16.13",
+    "antd": "^4.17.1",
     "ava": "^3.15.0",
+    "c8": "^7.10.0",
     "codecov": "^3.8.3",
     "css-loader": "^6.5.1",
-    "cssnano": "^4.1.11",
-    "eslint": "^7.32.0",
+    "cssnano": "^5.0.11",
+    "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
@@ -66,14 +66,14 @@
     "lodash-es": "^4.17.21",
     "material-ui": "^0.20.2",
     "mini-css-extract-plugin": "^2.4.5",
-    "nyc": "^15.1.0",
     "pinst": "^2.1.6",
+    "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.60.1",
-    "rollup-plugin-typescript2": "^0.31.0",
+    "rollup-plugin-typescript2": "^0.31.1",
     "rxjs": "^7.4.0",
     "shx": "^0.3.3",
     "source-map-support": "^0.5.21",
@@ -85,8 +85,8 @@
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1"
   },
-  "dependencies": {
-    "tslib": "^2.3.1"
+  "peerDependencies": {
+    "typescript": ">= 4.2"
   },
   "ava": {
     "extensions": [
@@ -117,13 +117,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "nyc": {
-    "extends": "@istanbuljs/nyc-config-typescript",
-    "exclude": [
-      "test/**/*.{js,ts}"
-    ],
-    "check-coverage": true
   },
   "funding": {
     "type": "github",

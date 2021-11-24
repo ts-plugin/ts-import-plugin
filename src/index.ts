@@ -81,7 +81,7 @@ function getImportedStructs(node: ts.Node) {
   return structs
 }
 
-function createDistAst(struct: ImportedStruct, options: Options) {
+function createDistAst(context: ts.TransformationContext, struct: ImportedStruct, options: Options) {
   const astNodes: ts.Node[] = []
 
   const { libraryName, libraryOverride } = options
@@ -117,38 +117,49 @@ function createDistAst(struct: ImportedStruct, options: Options) {
     }
 
     astNodes.push(
-      ts.createImportDeclaration(
+      context.factory.createImportDeclaration(
         undefined,
         undefined,
-        ts.createImportClause(
+        context.factory.createImportClause(
+          false,
           undefined,
-          ts.createNamedImports([ts.createImportSpecifier(undefined, ts.createIdentifier(_importName))]),
+          context.factory.createNamedImports([
+            context.factory.createImportSpecifier(false, undefined, context.factory.createIdentifier(_importName)),
+          ]),
         ),
-        ts.createLiteral(libraryName!),
+        context.factory.createStringLiteral(libraryName!),
       ),
     )
   }
 
   if (canResolveImportPath) {
-    const scriptNode = ts.createImportDeclaration(
+    const scriptNode = context.factory.createImportDeclaration(
       undefined,
       undefined,
-      ts.createImportClause(
+      context.factory.createImportClause(
+        false,
         struct.variableName || !options.transformToDefaultImport ? undefined : ts.createIdentifier(struct.importName),
         struct.variableName
-          ? ts.createNamedImports([
-              ts.createImportSpecifier(
+          ? context.factory.createNamedImports([
+              context.factory.createImportSpecifier(
+                false,
                 options.transformToDefaultImport
-                  ? ts.createIdentifier('default')
-                  : ts.createIdentifier(struct.importName),
-                ts.createIdentifier(struct.variableName),
+                  ? context.factory.createIdentifier('default')
+                  : context.factory.createIdentifier(struct.importName),
+                context.factory.createIdentifier(struct.variableName),
               ),
             ])
           : options.transformToDefaultImport
           ? undefined
-          : ts.createNamedImports([ts.createImportSpecifier(undefined, ts.createIdentifier(struct.importName))]),
+          : context.factory.createNamedImports([
+              context.factory.createImportSpecifier(
+                false,
+                undefined,
+                context.factory.createIdentifier(struct.importName),
+              ),
+            ]),
       ),
-      ts.createLiteral(importPath),
+      context.factory.createStringLiteral(importPath),
     )
 
     astNodes.push(scriptNode)
@@ -164,7 +175,12 @@ function createDistAst(struct: ImportedStruct, options: Options) {
       }
 
       if (stylePath) {
-        const styleNode = ts.createImportDeclaration(undefined, undefined, undefined, ts.createLiteral(stylePath))
+        const styleNode = context.factory.createImportDeclaration(
+          undefined,
+          undefined,
+          undefined,
+          context.factory.createStringLiteral(stylePath),
+        )
         astNodes.push(styleNode)
       }
     }
@@ -215,7 +231,7 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
       }
 
       return Array.from(structs).reduce((acc, struct) => {
-        const nodes = createDistAst(struct, options)
+        const nodes = createDistAst(context, struct, options)
         return acc.concat(nodes)
       }, <ts.Node[]>[])
     }
