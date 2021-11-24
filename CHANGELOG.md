@@ -1,3 +1,7 @@
+# 2.0.0
+
+**[BREAKING CHANGES]**: Compatible only `TypeScript` 4.2+. If your TypeScript version is below 4.2, use `1.x`.
+
 # 1.6.7
 **[Chore]** Upgrade deps, add `funding` field in package.json
 **[Chore]** Update example to webpack@5
