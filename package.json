@@ -46,7 +46,7 @@
     "@types/react": "^17.0.36",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/parser": "^5.4.0",
-    "antd": "^4.17.1",
+    "antd": "^4.17.2",
     "ava": "^3.15.0",
     "c8": "^7.10.0",
     "codecov": "^3.8.3",
