@@ -39,7 +39,7 @@
   "author": "lynweklm@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "@swc-node/register": "^1.4.0",
+    "@swc-node/register": "^1.4.1",
     "@types/lodash": "^4.14.177",
     "@types/material-ui": "^0.21.12",
     "@types/node": "^16.11.11",
