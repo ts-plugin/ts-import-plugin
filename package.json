@@ -51,7 +51,7 @@
     "c8": "^7.10.0",
     "codecov": "^3.8.3",
     "css-loader": "^6.5.1",
-    "cssnano": "^5.0.13",
+    "cssnano": "^5.0.14",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
