@@ -1,1 +1,6 @@
 test
+.yarn
+lib
+next
+esm
+coverage

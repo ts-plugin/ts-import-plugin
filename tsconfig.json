@@ -10,16 +10,7 @@
     "outDir": "lib",
     "sourceMap": true,
     "skipLibCheck": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es5",
-      "es2015",
-      "es2016"
-    ]
+    "lib": ["dom", "dom.iterable", "es5", "es2015", "es2016"]
   },
-  "exclude": [
-    "node_modules",
-    "lib"
-  ]
+  "exclude": ["node_modules", "lib"]
 }

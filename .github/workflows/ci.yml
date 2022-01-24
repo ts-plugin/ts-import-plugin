@@ -18,15 +18,8 @@ jobs:
           check-latest: true
           cache: 'yarn'
 
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-          key: npm-cache-tests-${{ hashFiles('**/yarn.lock') }}
-
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
+        run: yarn install --immutable --network-timeout 300000
 
       - name: Lint
         run: yarn lint
@@ -42,10 +35,10 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Codecov
-        run: npx codecov -f coverage/*.json
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          verbose: true # optional (default = false)
 
       - name: Publish
         run: |

@@ -15,9 +15,11 @@ webpack template `./webpack.config.js`, run: `npm start` to see the bundle analy
 # Why use this
 
 transform such code:
+
 ```ts
 import { Alert, Card as C } from 'antd'
 ```
+
 into:
 
 ```ts
@@ -30,6 +32,7 @@ import 'antd/lib/card/style/index.less'
 # Usage
 
 ## With ts-loader
+
 ```js
 //tsconfig.json
 {
@@ -53,21 +56,22 @@ module.exports = {
         options: {
           transpileOnly: true,
           getCustomTransformers: () => ({
-            before: [ tsImportPluginFactory( /** options */) ]
+            before: [tsImportPluginFactory(/** options */)],
           }),
           compilerOptions: {
-            module: 'es2015'
-          }
+            module: 'es2015',
+          },
         },
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   // ...
 }
 ```
 
 ## With awesome-typescript-loader ( >= 3.5.0 )
+
 ```js
 //tsconfig.json
 {
@@ -90,18 +94,19 @@ module.exports = {
         loader: 'awesome-typescript-loader',
         options: {
           getCustomTransformers: () => ({
-            before: [ tsImportPluginFactory( /** options */) ]
+            before: [tsImportPluginFactory(/** options */)],
           }),
         },
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   // ...
 }
 ```
 
 ## With rollup
+
 ```js
 import typescript from 'rollup-plugin-typescript2' // or '@rollup/plugin-typescript'
 import createTransformer from 'ts-import-plugin'
@@ -109,17 +114,21 @@ import createTransformer from 'ts-import-plugin'
 const transformer = createTransformer({
   libraryDirectory: 'es',
   libraryName: 'antd',
-  style: true
+  style: true,
 })
 
 export default {
   input: `./test/fixtures/index.tsx`,
-  plugins: [typescript({
-    clean: true,
-    transformers: [() => ({
-      before: transformer,
-    })]
-  })],
+  plugins: [
+    typescript({
+      clean: true,
+      transformers: [
+        () => ({
+          before: transformer,
+        }),
+      ],
+    }),
+  ],
   output: [
     {
       file: `./dist/rollup.dist.js`,
@@ -133,32 +142,37 @@ export default {
 
 `options` can be an object:
 
-- libraryName `string` - The name of the library in the import. e.g. If using `import { foo } from 'Bar'` 
-the library should be set to 'bar'.
+- libraryName `string` - The name of the library in the import. e.g. If using `import { foo } from 'Bar'`
+  the library should be set to 'bar'.
 
   default `'antd'`
+
 - style `boolean | string | ((path: string) => string)`
 
   default `false`
+
 - libraryDirectory `string | ((name: string) => string)` - The directory within the library to replace the import with.
-e.g. If you have `import { foo } from 'Bar'`, it will be replaced to `import foo from `\`Bar/${libraryDirectory}/foo\``
+  e.g. If you have `import { foo } from 'Bar'`, it will be replaced to `import foo from `\`Bar/${libraryDirectory}/foo\``
 
   default `'lib'`
+
 - camel2DashComponentName `boolean` - Builtin method to use to transform the component name. This does transform the
-component name from camelCase to dashed. e.g. `FooBar` gets transformed to `foo-bar`
+  component name from camelCase to dashed. e.g. `FooBar` gets transformed to `foo-bar`
 
   default `true`
+
 - camel2UnderlineComponentName `boolean` - Builtin method to use to transform the component name. This does transform the
- component name from camelCase to snake_case. e.g. `FooBar` gets transformed to `foo_bar`
+  component name from camelCase to snake_case. e.g. `FooBar` gets transformed to `foo_bar`
 
   default `false`
+
 - libraryOverride `boolean` - Setting to false (default) prepends the `libraryName` to the `libraryDirectory` (with a path separator)
- set to true if you want to use the `libraryDirectory` as the full path for the import.
+  set to true if you want to use the `libraryDirectory` as the full path for the import.
 
   default `false`
-  
-- failIfNotFound `boolean` - If the component is not found in the library, the full library is imported by default. 
- set to true to fail the build.
+
+- failIfNotFound `boolean` - If the component is not found in the library, the full library is imported by default.
+  set to true to fail the build.
 
   default `false`
 
@@ -168,7 +182,7 @@ example:
 tsImportPluginFactory({
   libraryName: 'antd',
   libraryDirectory: 'lib',
-  style: true
+  style: true,
 })
 ```
 
@@ -185,16 +199,17 @@ tsImportPluginFactory({
 example:
 
 ```javascript
-[
+;[
   {
     libraryName: 'antd',
     libraryDirectory: 'lib',
-    style: true
-  }, {
+    style: true,
+  },
+  {
     libraryName: '@material-ui/core',
     libraryDirectory: '',
-    camel2DashComponentName: false
-  }
+    camel2DashComponentName: false,
+  },
 ]
 ```
 
@@ -221,7 +236,7 @@ transformerFactory({
   style: false,
   libraryName: 'lodash',
   libraryDirectory: null,
-  camel2DashComponentName: false
+  camel2DashComponentName: false,
 })
 ```
 
@@ -246,29 +261,29 @@ import { Remove, Refresh, Add } from '@material-ui/icons'
 transformerFactory({
   libraryName: '@material-ui/core',
   libraryDirectory: '',
-  camel2DashComponentName: false
+  camel2DashComponentName: false,
 })
 
 // svg-icons
 transformerFactory({
-  libraryDirectory: importName => {
-    const stringVec = importName.split(/([A-Z][a-z]+|[0-9]*)/)
-      .filter(s => s.length)
-      .map(s => s.toLocaleLowerCase())
+  libraryDirectory: (importName) => {
+    const stringVec = importName
+      .split(/([A-Z][a-z]+|[0-9]*)/)
+      .filter((s) => s.length)
+      .map((s) => s.toLocaleLowerCase())
 
-    return stringVec
-      .reduce((acc, cur, index) => {
-        if (index > 1) {
-          return acc + '-' + cur
-        } else if (index === 1) {
-          return acc + '/' + cur
-        }
-        return acc + cur
-      }, '')
+    return stringVec.reduce((acc, cur, index) => {
+      if (index > 1) {
+        return acc + '-' + cur
+      } else if (index === 1) {
+        return acc + '/' + cur
+      }
+      return acc + cur
+    }, '')
   },
   libraryName: '@material-ui/icons',
   style: false,
-  camel2DashComponentName: false
+  camel2DashComponentName: false,
 })
 ```
 
@@ -280,12 +295,10 @@ import { Button } from 'element-ui'
 
 ```ts
 transformerFactory({
-    libraryName: 'element-ui',
-    libraryDirectory: 'lib',
-    camel2DashComponentName: true,
-    style: (path: string) =>
-        join('element-ui', 'lib', 'theme-chalk', `${
-            camel2Dash(basename(path, '.js'))}.css`),
+  libraryName: 'element-ui',
+  libraryDirectory: 'lib',
+  camel2DashComponentName: true,
+  style: (path: string) => join('element-ui', 'lib', 'theme-chalk', `${camel2Dash(basename(path, '.js'))}.css`),
 })
 ```
 
@@ -303,7 +316,7 @@ transformerFactory({
   libraryName: 'rxjs/operators',
   style: false,
   camel2DashComponentName: false,
-  transformToDefaultImport: false
+  transformToDefaultImport: false,
 })
 ```
 
@@ -315,14 +328,14 @@ transformerFactory([
     libraryDirectory: '../_esm5/internal/operators',
     libraryName: 'rxjs/operators',
     camel2DashComponentName: false,
-    transformToDefaultImport: false
+    transformToDefaultImport: false,
   },
   {
     libraryDirectory: '../_esm5/internal/observable',
     libraryName: 'rxjs',
     camel2DashComponentName: false,
     transformToDefaultImport: false,
-  }
+  },
 ])
 ```
 
