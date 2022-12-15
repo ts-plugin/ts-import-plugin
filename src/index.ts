@@ -138,7 +138,9 @@ function createDistAst(context: ts.TransformationContext, struct: ImportedStruct
       undefined,
       context.factory.createImportClause(
         false,
-        struct.variableName || !options.transformToDefaultImport ? undefined : ts.createIdentifier(struct.importName),
+        struct.variableName || !options.transformToDefaultImport
+          ? undefined
+          : context.factory.createIdentifier(struct.importName),
         struct.variableName
           ? context.factory.createNamedImports([
               context.factory.createImportSpecifier(
