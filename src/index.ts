@@ -119,7 +119,6 @@ function createDistAst(context: ts.TransformationContext, struct: ImportedStruct
     astNodes.push(
       context.factory.createImportDeclaration(
         undefined,
-        undefined,
         context.factory.createImportClause(
           false,
           undefined,
@@ -134,7 +133,6 @@ function createDistAst(context: ts.TransformationContext, struct: ImportedStruct
 
   if (canResolveImportPath) {
     const scriptNode = context.factory.createImportDeclaration(
-      undefined,
       undefined,
       context.factory.createImportClause(
         false,
@@ -178,7 +176,6 @@ function createDistAst(context: ts.TransformationContext, struct: ImportedStruct
 
       if (stylePath) {
         const styleNode = context.factory.createImportDeclaration(
-          undefined,
           undefined,
           undefined,
           context.factory.createStringLiteral(stylePath),
