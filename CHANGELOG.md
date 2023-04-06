@@ -1,3 +1,7 @@
+# 3.0.0
+
+**[BREAKING CHANGES]**: Compatible only `TypeScript` 4.8+. If your TypeScript version is below 4.8, use `2.x`.
+
 # 2.0.0
 
 **[BREAKING CHANGES]**: Compatible only `TypeScript` 4.2+. If your TypeScript version is below 4.2, use `1.x`.
