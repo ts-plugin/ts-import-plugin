@@ -229,10 +229,13 @@ export function createTransformer(_options: Partial<Options> | Array<Partial<Opt
         return node
       }
 
-      return Array.from(structs).reduce((acc, struct) => {
-        const nodes = createDistAst(context, struct, options)
-        return acc.concat(nodes)
-      }, <ts.Node[]>[])
+      return Array.from(structs).reduce(
+        (acc, struct) => {
+          const nodes = createDistAst(context, struct, options)
+          return acc.concat(nodes)
+        },
+        <ts.Node[]>[],
+      )
     }
 
     return (node: ts.Node) => ts.visitNode(node, visitor)
