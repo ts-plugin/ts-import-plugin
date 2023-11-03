@@ -2855,12 +2855,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-sonarjs@npm:^0.22.0":
-  version: 0.22.0
-  resolution: "eslint-plugin-sonarjs@npm:0.22.0"
+"eslint-plugin-sonarjs@npm:^0.23.0":
+  version: 0.23.0
+  resolution: "eslint-plugin-sonarjs@npm:0.23.0"
   peerDependencies:
     eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: f97d1cbb0e53d9c39829ca63be3880f3f1b697a5b558cac7c43ed253e242d914db22acbb2ef44eb33055aa47671017f5c42fb0edcc810893ec57f2fe92f894d6
+  checksum: 4f56557740ab438eee8d98e4d93363a8dadcf8d6d795a5d95e6a0b0d6335273a06c5633fe753271c6a56c14a3b0086014b8278984b5594fad5db274ec7fd7edf
   languageName: node
   linkType: hard
 
@@ -7448,7 +7448,7 @@ __metadata:
     eslint-plugin-prettier: ^5.0.0
     eslint-plugin-react: ^7.33.1
     eslint-plugin-react-hooks: ^4.6.0
-    eslint-plugin-sonarjs: ^0.22.0
+    eslint-plugin-sonarjs: ^0.23.0
     husky: 8
     json-schema: ^0.4.0
     lint-staged: ^15.0.0
