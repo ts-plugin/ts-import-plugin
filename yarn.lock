@@ -1844,9 +1844,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"c8@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "c8@npm:9.0.0"
+"c8@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "c8@npm:10.0.0"
   dependencies:
     "@bcoe/v8-coverage": "npm:^0.2.3"
     "@istanbuljs/schema": "npm:^0.1.3"
@@ -1855,13 +1855,13 @@ __metadata:
     istanbul-lib-coverage: "npm:^3.2.0"
     istanbul-lib-report: "npm:^3.0.1"
     istanbul-reports: "npm:^3.1.6"
-    test-exclude: "npm:^6.0.0"
+    test-exclude: "npm:^7.0.1"
     v8-to-istanbul: "npm:^9.0.0"
     yargs: "npm:^17.7.2"
     yargs-parser: "npm:^21.1.1"
   bin:
     c8: bin/c8.js
-  checksum: 10c0/d1be07d8a720807270adc7818492711aa7d3c201a6a3b6b69c85c8ebcf6eb5ccdcca81326b277dce6f19e00197b45a224c6915e707ee41ee0a2805dd538a855f
+  checksum: 10c0/4bcbdab090a0a9362c5f9e7e537af8fdc28554de583b2bdb4491d3f49cd033285e28a57bbc815f33718617a50ceecb9337e64945295eab1967f2e91c1024c45b
   languageName: node
   linkType: hard
 
@@ -3580,7 +3580,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.0.0, glob@npm:^7.1.3, glob@npm:^7.1.4":
+"glob@npm:^10.4.1":
+  version: 10.4.1
+  resolution: "glob@npm:10.4.1"
+  dependencies:
+    foreground-child: "npm:^3.1.0"
+    jackspeak: "npm:^3.1.2"
+    minimatch: "npm:^9.0.4"
+    minipass: "npm:^7.1.2"
+    path-scurry: "npm:^1.11.1"
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 10c0/77f2900ed98b9cc2a0e1901ee5e476d664dae3cd0f1b662b8bfd4ccf00d0edc31a11595807706a274ca10e1e251411bbf2e8e976c82bed0d879a9b89343ed379
+  languageName: node
+  linkType: hard
+
+"glob@npm:^7.0.0, glob@npm:^7.1.3":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -4352,6 +4367,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jackspeak@npm:^3.1.2":
+  version: 3.4.0
+  resolution: "jackspeak@npm:3.4.0"
+  dependencies:
+    "@isaacs/cliui": "npm:^8.0.2"
+    "@pkgjs/parseargs": "npm:^0.11.0"
+  dependenciesMeta:
+    "@pkgjs/parseargs":
+      optional: true
+  checksum: 10c0/7e42d1ea411b4d57d43ea8a6afbca9224382804359cb72626d0fc45bb8db1de5ad0248283c3db45fe73e77210750d4fcc7c2b4fe5d24fda94aaa24d658295c5f
+  languageName: node
+  linkType: hard
+
 "jest-worker@npm:^27.4.5":
   version: 27.5.1
   resolution: "jest-worker@npm:27.5.1"
@@ -4719,6 +4747,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru-cache@npm:^10.2.0":
+  version: 10.2.2
+  resolution: "lru-cache@npm:10.2.2"
+  checksum: 10c0/402d31094335851220d0b00985084288136136992979d0e015f0f1697e15d1c86052d7d53ae86b614e5b058425606efffc6969a31a091085d7a2b80a8a1e26d6
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -4894,12 +4929,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^3.0.4, minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
+"minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
   dependencies:
     brace-expansion: "npm:^1.1.7"
   checksum: 10c0/0262810a8fc2e72cca45d6fd86bd349eee435eb95ac6aa45c9ea2180e7ee875ef44c32b55b5973ceabe95ea12682f6e3725cbb63d7a2d1da3ae1163c8b210311
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^9.0.4":
+  version: 9.0.4
+  resolution: "minimatch@npm:9.0.4"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: 10c0/2c16f21f50e64922864e560ff97c587d15fd491f65d92a677a344e970fe62aafdbeafe648965fa96d33c061b4d0eabfe0213466203dd793367e7f28658cf6414
   languageName: node
   linkType: hard
 
@@ -4981,6 +5025,13 @@ __metadata:
   version: 7.0.4
   resolution: "minipass@npm:7.0.4"
   checksum: 10c0/6c7370a6dfd257bf18222da581ba89a5eaedca10e158781232a8b5542a90547540b4b9b7e7f490e4cda43acfbd12e086f0453728ecf8c19e0ef6921bc5958ac5
+  languageName: node
+  linkType: hard
+
+"minipass@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "minipass@npm:7.1.2"
+  checksum: 10c0/b0fd20bb9fb56e5fa9a8bfac539e8915ae07430a619e4b86ff71f5fc757ef3924b23b2c4230393af1eda647ed3d75739e4e0acb250a6b1eb277cf7f8fe449557
   languageName: node
   linkType: hard
 
@@ -5470,6 +5521,16 @@ __metadata:
     lru-cache: "npm:^9.1.1 || ^10.0.0"
     minipass: "npm:^5.0.0 || ^6.0.2 || ^7.0.0"
   checksum: 10c0/e5dc78a7348d25eec61ab166317e9e9c7b46818aa2c2b9006c507a6ff48c672d011292d9662527213e558f5652ce0afcc788663a061d8b59ab495681840c0c1e
+  languageName: node
+  linkType: hard
+
+"path-scurry@npm:^1.11.1":
+  version: 1.11.1
+  resolution: "path-scurry@npm:1.11.1"
+  dependencies:
+    lru-cache: "npm:^10.2.0"
+    minipass: "npm:^5.0.0 || ^6.0.2 || ^7.0.0"
+  checksum: 10c0/32a13711a2a505616ae1cc1b5076801e453e7aae6ac40ab55b388bb91b9d0547a52f5aaceff710ea400205f18691120d4431e520afbe4266b836fadede15872d
   languageName: node
   linkType: hard
 
@@ -7579,14 +7640,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"test-exclude@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "test-exclude@npm:6.0.0"
+"test-exclude@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "test-exclude@npm:7.0.1"
   dependencies:
     "@istanbuljs/schema": "npm:^0.1.2"
-    glob: "npm:^7.1.4"
-    minimatch: "npm:^3.0.4"
-  checksum: 10c0/019d33d81adff3f9f1bfcff18125fb2d3c65564f437d9be539270ee74b994986abb8260c7c2ce90e8f30162178b09dbbce33c6389273afac4f36069c48521f57
+    glob: "npm:^10.4.1"
+    minimatch: "npm:^9.0.4"
+  checksum: 10c0/6d67b9af4336a2e12b26a68c83308c7863534c65f27ed4ff7068a56f5a58f7ac703e8fc80f698a19bb154fd8f705cdf7ec347d9512b2c522c737269507e7b263
   languageName: node
   linkType: hard
 
@@ -7671,7 +7732,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^7.0.0"
     antd: "npm:^5.11.1"
     ava: "npm:^6.0.0"
-    c8: "npm:^9.0.0"
+    c8: "npm:^10.0.0"
     css-loader: "npm:^7.0.0"
     cssnano: "npm:^7.0.0"
     eslint: "npm:^8.53.0"
