@@ -50,7 +50,7 @@
     "@types/node": "^20.9.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
-    "@typescript-eslint/parser": "^7.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "antd": "^5.11.1",
     "ava": "^6.0.0",
     "c8": "^10.0.0",
