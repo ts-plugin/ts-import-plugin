@@ -921,16 +921,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.15":
-  version: 18.2.15
-  resolution: "@types/react-dom@npm:18.2.15"
+"@types/react-dom@npm:^19.0.0":
+  version: 19.0.0
+  resolution: "@types/react-dom@npm:19.0.0"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10c0/70e86f15f69f89b8f179139ab2e8a8aa9765e742789f5dd5a46fec40d4300ada8fe3349cceda42b9964a018982d7ccb7d791b47f781966c992bfd37da909fbd3
+  checksum: 10c0/bd480fc4a9c801fc6bbc7d26b37bb815fc382e76b5428511b1bdb2e8048f3dbd2ff9973bafc86b448e0593f9da4c02f7b39d47409e427daeed5a54f045de4596
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.2.37":
+"@types/react@npm:*":
   version: 18.2.37
   resolution: "@types/react@npm:18.2.37"
   dependencies:
@@ -938,6 +938,15 @@ __metadata:
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10c0/79dd5d23da05bec54e7423ca17096e345eb8fd80a3bf8dd916bb5cdd60677d27c298523aa5b245d090fcc4ec100cfd58c1af4631fbac709d0a9d8be75f9d78a9
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^19.0.0":
+  version: 19.0.0
+  resolution: "@types/react@npm:19.0.0"
+  dependencies:
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/d7753ec27c5fa48f3aab97d7d4e9e33ad62bbff761a421bfc56c7b403fab9e3ed266d47793e44311ca2f0034e8ae428cea4aecbe1c542b418cfe72a520eab931
   languageName: node
   linkType: hard
 
@@ -3031,12 +3040,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "eslint-plugin-react-hooks@npm:4.6.0"
+"eslint-plugin-react-hooks@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "eslint-plugin-react-hooks@npm:5.1.0"
   peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-  checksum: 10c0/58c7e10ea5792c33346fcf5cb4024e14837035ce412ff99c2dcb7c4f903dc9b17939078f80bfef826301ce326582c396c00e8e0ac9d10ac2cde2b42d33763c65
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
+  checksum: 10c0/37ef76e1d916d46ab8e93a596078efcf2162e2c653614437e0c54e31d02a5dadabec22802fab717effe257aeb4bdc20c2a710666a89ab1cf07e01e614dde75d8
   languageName: node
   linkType: hard
 
@@ -4799,7 +4808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -6735,15 +6744,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react-dom@npm:18.2.0"
+"react-dom@npm:^19.0.0":
+  version: 19.0.0
+  resolution: "react-dom@npm:19.0.0"
   dependencies:
-    loose-envify: "npm:^1.1.0"
-    scheduler: "npm:^0.23.0"
+    scheduler: "npm:^0.25.0"
   peerDependencies:
-    react: ^18.2.0
-  checksum: 10c0/66dfc5f93e13d0674e78ef41f92ed21dfb80f9c4ac4ac25a4b51046d41d4d2186abc915b897f69d3d0ebbffe6184e7c5876f2af26bfa956f179225d921be713a
+    react: ^19.0.0
+  checksum: 10c0/a36ce7ab507b237ae2759c984cdaad4af4096d8199fb65b3815c16825e5cfeb7293da790a3fc2184b52bfba7ba3ff31c058c01947aff6fd1a3701632aabaa6a9
   languageName: node
   linkType: hard
 
@@ -6761,12 +6769,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10c0/b562d9b569b0cb315e44b48099f7712283d93df36b19a39a67c254c6686479d3980b7f013dc931f4a5a3ae7645eae6386b4aa5eea933baa54ecd0f9acb0902b8
+"react@npm:^19.0.0":
+  version: 19.0.0
+  resolution: "react@npm:19.0.0"
+  checksum: 10c0/9cad8f103e8e3a16d15cb18a0d8115d8bd9f9e1ce3420310aea381eb42aa0a4f812cf047bb5441349257a05fba8a291515691e3cb51267279b2d2c3253f38471
   languageName: node
   linkType: hard
 
@@ -7112,12 +7118,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "scheduler@npm:0.23.0"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10c0/b777f7ca0115e6d93e126ac490dbd82642d14983b3079f58f35519d992fa46260be7d6e6cede433a92db70306310c6f5f06e144f0e40c484199e09c1f7be53dd
+"scheduler@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "scheduler@npm:0.25.0"
+  checksum: 10c0/a4bb1da406b613ce72c1299db43759526058fdcc413999c3c3e0db8956df7633acf395cb20eb2303b6a65d658d66b6585d344460abaee8080b4aa931f10eaafe
   languageName: node
   linkType: hard
 
@@ -7835,8 +7839,8 @@ __metadata:
     "@types/lodash": "npm:^4.14.201"
     "@types/material-ui": "npm:^0.21.14"
     "@types/node": "npm:^22.0.0"
-    "@types/react": "npm:^18.2.37"
-    "@types/react-dom": "npm:^18.2.15"
+    "@types/react": "npm:^19.0.0"
+    "@types/react-dom": "npm:^19.0.0"
     "@typescript-eslint/parser": "npm:^8.0.0"
     antd: "npm:^5.11.1"
     ava: "npm:^6.0.0"
@@ -7848,7 +7852,7 @@ __metadata:
     eslint-plugin-import: "npm:^2.29.0"
     eslint-plugin-prettier: "npm:^5.0.1"
     eslint-plugin-react: "npm:^7.33.2"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-hooks: "npm:^5.0.0"
     eslint-plugin-sonarjs: "npm:^0.25.0"
     husky: "npm:9"
     json-schema: "npm:^0.4.0"
@@ -7860,8 +7864,8 @@ __metadata:
     postcss: "npm:^8.4.31"
     postcss-loader: "npm:^8.0.0"
     prettier: "npm:^3.0.3"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
     rollup: "npm:^4.4.0"
     rollup-plugin-typescript2: "npm:^0.36.0"
     rxjs: "npm:^7.8.1"
