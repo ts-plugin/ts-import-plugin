@@ -85,7 +85,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
-    "webpack-bundle-analyzer": "^4.9.1",
+    "webpack-bundle-analyzer": "^5.0.0",
     "webpack-cli": "^6.0.0"
   },
   "peerDependencies": {
