@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Brooooooklyn/ts-import-plugin.git"
+    "url": "git+https://github.com/ts-plugin/ts-import-plugin.git"
   },
   "keywords": [
     "antd",
