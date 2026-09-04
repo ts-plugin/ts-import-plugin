@@ -56,7 +56,7 @@
     "c8": "^10.0.0",
     "css-loader": "^7.0.0",
     "cssnano": "^7.0.0",
-    "eslint": "^8.53.0",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^5.0.1",
