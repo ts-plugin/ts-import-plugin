@@ -52,7 +52,7 @@
     "@types/react-dom": "^19.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "antd": "^6.0.0",
-    "ava": "^7.0.0",
+    "ava": "^8.0.0",
     "c8": "^10.0.0",
     "css-loader": "^7.0.0",
     "cssnano": "^7.0.0",
